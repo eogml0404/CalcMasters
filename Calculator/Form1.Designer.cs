@@ -46,6 +46,7 @@
             this.erase = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.div = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // inputBox
@@ -224,11 +225,22 @@
             this.div.UseVisualStyleBackColor = true;
             this.div.Click += new System.EventHandler(this.divide_Click);
             // 
-            // multi
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(594, 455);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(125, 22);
+            this.checkBox1.TabIndex = 18;
+            this.checkBox1.Text = "checkBox1";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // Calcul
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1061, 582);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.div);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.erase);
@@ -247,7 +259,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.inputBox);
-            this.Name = "multi";
+            this.Name = "Calcul";
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -274,6 +286,7 @@
         private System.Windows.Forms.Button erase;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button div;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
 
