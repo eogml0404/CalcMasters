@@ -9,7 +9,7 @@ namespace Calculator
         public Calcul()
         {
             InitializeComponent();
-        }
+        }   
 
         List<int> numbers = new List<int>();
         List<string> operators = new List<string>();
