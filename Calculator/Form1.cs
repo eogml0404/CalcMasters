@@ -191,5 +191,13 @@ namespace Calculator
                 inputBox.Text = inputBox.Text.Substring(0, inputBox.Text.Length - 1);
             }
         }
+
+        private void reverse_Click(object sender, EventArgs e)
+        {
+            double a = double.Parse(inputBox.Text);
+            inputBox.Clear();
+            a = -a;
+            inputBox.Text += a.ToString();
+        }
     }
 }

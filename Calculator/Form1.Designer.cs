@@ -46,14 +46,13 @@
             this.erase = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.div = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.reverse = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // inputBox
             // 
             this.inputBox.Location = new System.Drawing.Point(47, 20);
-            this.inputBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.inputBox.Margin = new System.Windows.Forms.Padding(2);
             this.inputBox.Multiline = true;
             this.inputBox.Name = "inputBox";
             this.inputBox.Size = new System.Drawing.Size(374, 90);
@@ -62,7 +61,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(66, 175);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(60, 62);
             this.button1.TabIndex = 1;
@@ -73,7 +72,7 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(158, 175);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(60, 62);
             this.button2.TabIndex = 2;
@@ -84,7 +83,7 @@
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(254, 175);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(60, 62);
             this.button3.TabIndex = 3;
@@ -95,7 +94,7 @@
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(66, 268);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(60, 62);
             this.button4.TabIndex = 4;
@@ -106,7 +105,7 @@
             // button5
             // 
             this.button5.Location = new System.Drawing.Point(158, 268);
-            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(60, 62);
             this.button5.TabIndex = 5;
@@ -117,7 +116,7 @@
             // button6
             // 
             this.button6.Location = new System.Drawing.Point(254, 268);
-            this.button6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button6.Margin = new System.Windows.Forms.Padding(2);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(60, 62);
             this.button6.TabIndex = 6;
@@ -128,7 +127,7 @@
             // button7
             // 
             this.button7.Location = new System.Drawing.Point(66, 368);
-            this.button7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button7.Margin = new System.Windows.Forms.Padding(2);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(60, 62);
             this.button7.TabIndex = 7;
@@ -139,7 +138,7 @@
             // button8
             // 
             this.button8.Location = new System.Drawing.Point(158, 368);
-            this.button8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button8.Margin = new System.Windows.Forms.Padding(2);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(60, 62);
             this.button8.TabIndex = 8;
@@ -150,7 +149,7 @@
             // button9
             // 
             this.button9.Location = new System.Drawing.Point(254, 368);
-            this.button9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button9.Margin = new System.Windows.Forms.Padding(2);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(60, 62);
             this.button9.TabIndex = 9;
@@ -161,7 +160,7 @@
             // plus
             // 
             this.plus.Location = new System.Drawing.Point(360, 175);
-            this.plus.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.plus.Margin = new System.Windows.Forms.Padding(2);
             this.plus.Name = "plus";
             this.plus.Size = new System.Drawing.Size(60, 62);
             this.plus.TabIndex = 10;
@@ -172,7 +171,7 @@
             // minus
             // 
             this.minus.Location = new System.Drawing.Point(360, 268);
-            this.minus.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.minus.Margin = new System.Windows.Forms.Padding(2);
             this.minus.Name = "minus";
             this.minus.Size = new System.Drawing.Size(60, 62);
             this.minus.TabIndex = 11;
@@ -183,7 +182,7 @@
             // execute
             // 
             this.execute.Location = new System.Drawing.Point(360, 368);
-            this.execute.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.execute.Margin = new System.Windows.Forms.Padding(2);
             this.execute.Name = "execute";
             this.execute.Size = new System.Drawing.Size(60, 62);
             this.execute.TabIndex = 12;
@@ -194,7 +193,7 @@
             // resultBox
             // 
             this.resultBox.Location = new System.Drawing.Point(222, 130);
-            this.resultBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.resultBox.Margin = new System.Windows.Forms.Padding(2);
             this.resultBox.Multiline = true;
             this.resultBox.Name = "resultBox";
             this.resultBox.Size = new System.Drawing.Size(198, 24);
@@ -203,7 +202,7 @@
             // ACBtn
             // 
             this.ACBtn.Location = new System.Drawing.Point(66, 118);
-            this.ACBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ACBtn.Margin = new System.Windows.Forms.Padding(2);
             this.ACBtn.Name = "ACBtn";
             this.ACBtn.Size = new System.Drawing.Size(60, 44);
             this.ACBtn.TabIndex = 14;
@@ -214,7 +213,7 @@
             // erase
             // 
             this.erase.Location = new System.Drawing.Point(158, 118);
-            this.erase.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.erase.Margin = new System.Windows.Forms.Padding(2);
             this.erase.Name = "erase";
             this.erase.Size = new System.Drawing.Size(60, 44);
             this.erase.TabIndex = 15;
@@ -225,7 +224,7 @@
             // button10
             // 
             this.button10.Location = new System.Drawing.Point(454, 175);
-            this.button10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button10.Margin = new System.Windows.Forms.Padding(2);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(60, 62);
             this.button10.TabIndex = 16;
@@ -236,7 +235,7 @@
             // div
             // 
             this.div.Location = new System.Drawing.Point(454, 268);
-            this.div.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.div.Margin = new System.Windows.Forms.Padding(2);
             this.div.Name = "div";
             this.div.Size = new System.Drawing.Size(60, 62);
             this.div.TabIndex = 17;
@@ -244,35 +243,22 @@
             this.div.UseVisualStyleBackColor = true;
             this.div.Click += new System.EventHandler(this.divide_Click);
             // 
-            // checkBox1
+            // reverse
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(594, 455);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(125, 22);
-            this.checkBox1.TabIndex = 18;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // button11
-            // 
-            this.button11.Location = new System.Drawing.Point(665, 378);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(75, 23);
-            this.button11.TabIndex = 18;
-            this.button11.Text = "button11";
-            this.button11.UseVisualStyleBackColor = true;
+            this.reverse.Location = new System.Drawing.Point(454, 368);
+            this.reverse.Name = "reverse";
+            this.reverse.Size = new System.Drawing.Size(60, 62);
+            this.reverse.TabIndex = 18;
+            this.reverse.Text = "+/-";
+            this.reverse.UseVisualStyleBackColor = true;
+            this.reverse.Click += new System.EventHandler(this.reverse_Click);
             // 
             // Calcul
             // 
-            // Calcul
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(849, 485);
-            this.Controls.Add(this.button11);
             this.ClientSize = new System.Drawing.Size(1061, 582);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.reverse);
             this.Controls.Add(this.div);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.erase);
@@ -291,8 +277,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.inputBox);
-            this.Name = "Calcul";
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Calcul";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -320,8 +305,7 @@
         private System.Windows.Forms.Button erase;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button div;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button reverse;
     }
 }
 
