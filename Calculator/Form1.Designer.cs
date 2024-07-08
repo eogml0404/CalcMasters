@@ -47,6 +47,7 @@
             this.button10 = new System.Windows.Forms.Button();
             this.div = new System.Windows.Forms.Button();
             this.reverse = new System.Windows.Forms.Button();
+            this.button0 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // inputBox
@@ -253,11 +254,22 @@
             this.reverse.UseVisualStyleBackColor = true;
             this.reverse.Click += new System.EventHandler(this.reverse_Click);
             // 
+            // button0
+            // 
+            this.button0.Location = new System.Drawing.Point(158, 458);
+            this.button0.Name = "button0";
+            this.button0.Size = new System.Drawing.Size(60, 62);
+            this.button0.TabIndex = 19;
+            this.button0.Text = "0";
+            this.button0.UseVisualStyleBackColor = true;
+            this.button0.Click += new System.EventHandler(this.button0_Click);
+            // 
             // Calcul
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1061, 582);
+            this.Controls.Add(this.button0);
             this.Controls.Add(this.reverse);
             this.Controls.Add(this.div);
             this.Controls.Add(this.button10);
@@ -306,6 +318,7 @@
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button div;
         private System.Windows.Forms.Button reverse;
+        private System.Windows.Forms.Button button0;
     }
 }
 

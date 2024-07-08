@@ -176,6 +176,11 @@ namespace Calculator
             AppendToInputBox("9");
         }
 
+        private void button0_Click(object sender, EventArgs e)
+        {
+            AppendToInputBox("0");
+        }
+
         private void ACBtn_Click(object sender, EventArgs e)
         {
             inputBox.Text = "";
@@ -199,5 +204,7 @@ namespace Calculator
             a = -a;
             inputBox.Text += a.ToString();
         }
+
+        
     }
 }
