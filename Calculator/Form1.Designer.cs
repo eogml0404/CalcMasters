@@ -51,6 +51,7 @@
             this.remainder = new System.Windows.Forms.Button();
             this.his = new System.Windows.Forms.Button();
             this.formulaBox = new System.Windows.Forms.TextBox();
+            this.dot = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // inputBox
@@ -298,11 +299,23 @@
             this.formulaBox.Size = new System.Drawing.Size(582, 28);
             this.formulaBox.TabIndex = 20;
             // 
+            // dot
+            // 
+            this.dot.Location = new System.Drawing.Point(822, 481);
+            this.dot.Name = "dot";
+            this.dot.Size = new System.Drawing.Size(57, 67);
+            this.dot.TabIndex = 21;
+            this.dot.Text = ".";
+            this.dot.UseVisualStyleBackColor = true;
+            this.dot.Click += new System.EventHandler(this.dot_Click);
+            // 
             // Calcul
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1222, 724);
+            this.ClientSize = new System.Drawing.Size(1061, 582);
+            this.Controls.Add(this.dot);
             this.Controls.Add(this.formulaBox);
             this.Controls.Add(this.his);
             this.Controls.Add(this.remainder);
@@ -359,6 +372,7 @@
         private System.Windows.Forms.Button reverse;
         private System.Windows.Forms.Button button0;
         private System.Windows.Forms.Button remainder;
+        private System.Windows.Forms.Button dot;
     }
 }
 

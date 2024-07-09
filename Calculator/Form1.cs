@@ -170,6 +170,8 @@ namespace Calculator
             operators.Clear();
         }
 
+        }
+
         private void AppendToInputBox(string value)
         {
             if (calculationCompleted)
@@ -271,6 +273,21 @@ namespace Calculator
             AppendToInputBox("0");
         }
 
+        private void ACBtn_Click(object sender, EventArgs e)
+        {
+            inputBox.Text = "";
+            resultBox.Text = "";
+            numbers.Clear();
+            operators.Clear();
+        }
+
+        private void erase_Click(object sender, EventArgs e)
+        {
+            if (inputBox.Text.Length > 0)
+            {
+                inputBox.Text = inputBox.Text.Substring(0, inputBox.Text.Length - 1);
+            }
+        }
 
         //양수, 음수 전환
         private void reverse_Click(object sender, EventArgs e)
@@ -279,13 +296,36 @@ namespace Calculator
             {
                 AppendToInputBox("-");
             }
+
+            else
+            if (inputBox.Text.EndsWith("-", StringComparison.OrdinalIgnoreCase) && formulaBox.Text.EndsWith("-", StringComparison.OrdinalIgnoreCase))
+            {
+                inputBox.Text = inputBox.Text.Remove(inputBox.Text.Length - 1);
+                formulaBox.Text = formulaBox.Text.Remove(formulaBox.Text.Length - 1);
+            }
+
             else
             {
                 double a = double.Parse(inputBox.Text);
                 inputBox.Clear();
+                formulaBox.Clear();
                 a = -a;
                 inputBox.Text += a.ToString("N0");
+                formulaBox.Text += a.ToString("N0");
             }
+        }
+
+        private void dot_Click(object sender, EventArgs e)
+        {
+            if (inputBox.Text.Contains("."))
+            {
+                return;
+            }
+            else
+            {
+                inputBox.Text += ".";
+                formulaBox.Text += ".";
+            } 
         }
 
     }
