@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Calculator
 {
@@ -148,11 +149,17 @@ namespace Calculator
                         break;
                 }
             }
-
-            resultBox.Text = finalResult.ToString("N0");
-            history[j] += finalResult.ToString("N0");
+            if (finalResult % 1 == 0)
+            {
+                resultBox.Text = finalResult.ToString("N0");
+            }
+            else
+            {
+                resultBox.Text += finalResult.ToString("N2");
+            }
+            history[j] += finalResult.ToString("N2");
             
-            formulaBox.Text += " = " + finalResult;
+            formulaBox.Text += " = " + finalResult.ToString("N2");
             inputBox.Text = "";
             numbers.Clear();
             operators.Clear();
@@ -179,24 +186,7 @@ namespace Calculator
             history[j] += value;
             formulaBox.Text += value;
         }
-        private void ACBtn_Click(object sender, EventArgs e)
-        {
-            inputBox.Text = "";
-            resultBox.Text = "";
-            formulaBox.Text = "";
-            numbers.Clear();
-            operators.Clear();
-            Array.Clear(history, 0, history.Length);
-            j = 0;
-        }
-
-        private void erase_Click(object sender, EventArgs e)
-        {
-            if (inputBox.Text.Length > 0)
-            {
-                inputBox.Text = inputBox.Text.Substring(0, inputBox.Text.Length - 1);
-            }
-        }
+     
 
         private void his_Click(object sender, EventArgs e)
         {
@@ -272,10 +262,17 @@ namespace Calculator
         //양수, 음수 전환
         private void reverse_Click(object sender, EventArgs e)
         {
-            double a = double.Parse(inputBox.Text);
-            inputBox.Clear();
-            a = -a;
-            inputBox.Text += a.ToString();
+            if (string.IsNullOrWhiteSpace(inputBox.Text))
+            {
+                AppendToInputBox("-");
+            }
+            else
+            {
+                double a = double.Parse(inputBox.Text);
+                inputBox.Clear();
+                a = -a;
+                inputBox.Text += a.ToString("N2");
+            }
         }
 
         
