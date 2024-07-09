@@ -11,7 +11,7 @@ namespace Calculator
             InitializeComponent();
         }   
 
-        List<int> numbers = new List<int>();
+        List<double> numbers = new List<double>();
         List<string> operators = new List<string>();
      
 
@@ -35,13 +35,18 @@ namespace Calculator
             AddNumberAndOperator("/");
         }
 
+        private void remainder_Click(object sender, EventArgs e)
+        {
+            AddNumberAndOperator("%");
+        }
+
         private void AddNumberAndOperator(string op)
         {
             //처음에 담기지 않아야함
             if (inputBox.Text != "")
             {
-                int number;
-                if (int.TryParse(inputBox.Text, out number))
+                double number;
+                if (double.TryParse(inputBox.Text, out number))
                 {
                     numbers.Add(number);
                     operators.Add(op);
@@ -55,10 +60,10 @@ namespace Calculator
         {
             if (inputBox.Text != "")
             {
-                int number;
+                double number;
                 //변환되면 number이고 아니면 false
             
-                if (int.TryParse(inputBox.Text, out number))
+                if (double.TryParse(inputBox.Text, out number))
                 {
                     numbers.Add(number);
                     CalculateResult();
@@ -73,11 +78,11 @@ namespace Calculator
             // Step 1: 곱셈, 나눗셈 찾아서 먼저 계산
             for (int i = 0; i < operators.Count; i++)
             {
-                if (operators[i] == "*" || operators[i] == "/")
+                if (operators[i] == "*" || operators[i] == "/" || operators[i] == "%")
                 {
-                    int lhs = numbers[i];
-                    int rhs = numbers[i + 1];
-                    int result;
+                    double rhs = numbers[i + 1];
+                    double lhs = numbers[i];
+                    double result;
 
                     if (operators[i] == "*")
                     {
@@ -90,7 +95,17 @@ namespace Calculator
                             resultBox.Text = "Error: Division by zero!";
                             return;
                         }
-                        result = lhs / rhs;
+                        else
+                        {
+                            if (operators[i] == "/")
+                            {
+                                result = lhs / rhs;
+                            }
+                            else
+                            {
+                                result = lhs % rhs;
+                            }
+                        }
                     }
 
                     numbers[i] = result;
@@ -103,7 +118,7 @@ namespace Calculator
             }
 
             // Step 2: 나머지 덧셈과 뺄셈 진행
-            int finalResult = numbers[0];
+            double finalResult = numbers[0];
             for (int i = 0; i < operators.Count; i++)
             {
                 switch (operators[i])
@@ -118,7 +133,7 @@ namespace Calculator
             }
 
             // ,000
-            resultBox.Text = finalResult.ToString("N0");
+            resultBox.Text = finalResult.ToString();
             inputBox.Text = "";
             numbers.Clear();
             operators.Clear();
@@ -197,6 +212,7 @@ namespace Calculator
             }
         }
 
+        //양수, 음수 전환
         private void reverse_Click(object sender, EventArgs e)
         {
             double a = double.Parse(inputBox.Text);

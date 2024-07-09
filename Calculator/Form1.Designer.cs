@@ -48,6 +48,7 @@
             this.div = new System.Windows.Forms.Button();
             this.reverse = new System.Windows.Forms.Button();
             this.button0 = new System.Windows.Forms.Button();
+            this.remainder = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // inputBox
@@ -264,11 +265,22 @@
             this.button0.UseVisualStyleBackColor = true;
             this.button0.Click += new System.EventHandler(this.button0_Click);
             // 
+            // remainder
+            // 
+            this.remainder.Location = new System.Drawing.Point(365, 459);
+            this.remainder.Name = "remainder";
+            this.remainder.Size = new System.Drawing.Size(60, 62);
+            this.remainder.TabIndex = 20;
+            this.remainder.Text = "%";
+            this.remainder.UseVisualStyleBackColor = true;
+            this.remainder.Click += new System.EventHandler(this.remainder_Click);
+            // 
             // Calcul
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1061, 582);
+            this.Controls.Add(this.remainder);
             this.Controls.Add(this.button0);
             this.Controls.Add(this.reverse);
             this.Controls.Add(this.div);
@@ -319,6 +331,7 @@
         private System.Windows.Forms.Button div;
         private System.Windows.Forms.Button reverse;
         private System.Windows.Forms.Button button0;
+        private System.Windows.Forms.Button remainder;
     }
 }
 
