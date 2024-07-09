@@ -249,8 +249,7 @@
             // 
             // reverse
             // 
-            this.reverse.Location = new System.Drawing.Point(730, 91);
-            this.reverse.Margin = new System.Windows.Forms.Padding(4);
+            this.reverse.Location = new System.Drawing.Point(694, 373);
             this.reverse.Name = "reverse";
             this.reverse.Size = new System.Drawing.Size(75, 74);
             this.reverse.TabIndex = 18;

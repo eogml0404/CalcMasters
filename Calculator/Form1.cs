@@ -14,9 +14,6 @@ namespace Calculator
         List<double> numbers = new List<double>();
         List<string> operators = new List<string>();
         bool calculationCompleted = false;
-        bool negateNextNumber = false;
-
-
 
         string[] history = { "", "", "", "", "" };
 
@@ -160,11 +157,17 @@ namespace Calculator
                         break;
                 }
             }
-
-            resultBox.Text = finalResult.ToString("N0");
-            history[j] += finalResult.ToString("N0");
-
-            formulaBox.Text += " = " + finalResult;
+            if (finalResult % 1 == 0)
+            {
+                resultBox.Text = finalResult.ToString("N0");
+            }
+            else
+            {
+                resultBox.Text += finalResult.ToString("N2");
+            }
+            history[j] += finalResult.ToString("N2");
+            
+            formulaBox.Text += " = " + finalResult.ToString("N2");
             inputBox.Text = "";
             numbers.Clear();
             operators.Clear();
@@ -177,7 +180,6 @@ namespace Calculator
                 formulaBox.Text = "";
                 resultBox.Text = "";
                 calculationCompleted = false;
-                negateNextNumber = false;
             }
             if (j >= 5)
             {
@@ -187,13 +189,6 @@ namespace Calculator
                 }
                 history[4] = "";
                 j = 4;
-            }
-            if (negateNextNumber)
-            {
-                inputBox.Text += "-";
-                formulaBox.Text += "-";
-                history[j] += "-";
-                negateNextNumber = false;
             }
             inputBox.Text += value;
             history[j] += value;
@@ -271,19 +266,35 @@ namespace Calculator
             AppendToInputBox("0");
         }
 
+        private void ACBtn_Click(object sender, EventArgs e)
+        {
+            inputBox.Text = "";
+            resultBox.Text = "";
+            numbers.Clear();
+            operators.Clear();
+        }
+
+        private void erase_Click(object sender, EventArgs e)
+        {
+            if (inputBox.Text.Length > 0)
+            {
+                inputBox.Text = inputBox.Text.Substring(0, inputBox.Text.Length - 1);
+            }
+        }
+
         //양수, 음수 전환
         private void reverse_Click(object sender, EventArgs e)
         {
-            if (inputBox.Text == "")
+            if (string.IsNullOrWhiteSpace(inputBox.Text))
             {
-                negateNextNumber = true;
+                AppendToInputBox("-");
             }
             else
             {
                 double a = double.Parse(inputBox.Text);
                 inputBox.Clear();
                 a = -a;
-                inputBox.Text += a.ToString();
+                inputBox.Text += a.ToString("N2");
             }
         }
 
