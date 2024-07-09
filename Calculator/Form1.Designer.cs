@@ -249,7 +249,7 @@
             // 
             // reverse
             // 
-            this.reverse.Location = new System.Drawing.Point(694, 373);
+            this.reverse.Location = new System.Drawing.Point(711, 91);
             this.reverse.Name = "reverse";
             this.reverse.Size = new System.Drawing.Size(75, 74);
             this.reverse.TabIndex = 18;

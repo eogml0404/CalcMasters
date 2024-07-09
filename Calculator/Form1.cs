@@ -46,7 +46,6 @@ namespace Calculator
 
         private void AddNumberAndOperator(string op)
         {
-            history[j] += op;
 
             double number;
             if (double.TryParse(inputBox.Text, out number))
@@ -56,7 +55,6 @@ namespace Calculator
                 numbers.Add(number);
                 operators.Add(op);
                 formulaBox.Text += " " + op + " ";
-                history[j] += op;
                 inputBox.Text = "";
 
             }
@@ -67,7 +65,6 @@ namespace Calculator
                 operators[operators.Count - 1] = op;
                 // 수식 상자에서 마지막 연산자를 바꾼다
                 formulaBox.Text = formulaBox.Text.Substring(0, formulaBox.Text.Length - 2) + op + " ";
-                history[j] = history[j].Substring(0, history[j].Length - 2) + op;
             }
         }
 
@@ -86,18 +83,16 @@ namespace Calculator
             if (inputBox.Text != "")
             {
                 double number;
-                //변환되면 number이고 아니면 false
-
                 if (double.TryParse(inputBox.Text, out number))
                 {
                     numbers.Add(number);
                     history[j] += "=";
                     CalculateResult();
+
                 }
             }
             calculationCompleted = true;
             j++;
-
         }
 
         private void CalculateResult()
@@ -120,6 +115,7 @@ namespace Calculator
                         if (rhs == 0)
                         {
                             resultBox.Text = "Error: Division by zero!";
+                            inputBox.Text = "Error: Division by zero!";
                             return;
                         }
                         else
@@ -165,9 +161,10 @@ namespace Calculator
             {
                 resultBox.Text += finalResult.ToString("N2");
             }
-            history[j] += finalResult.ToString("N2");
+            
             
             formulaBox.Text += " = " + finalResult.ToString("N2");
+            history[j] = formulaBox.Text;
             inputBox.Text = "";
             numbers.Clear();
             operators.Clear();
@@ -191,7 +188,6 @@ namespace Calculator
                 j = 4;
             }
             inputBox.Text += value;
-            history[j] += value;
             formulaBox.Text += value;
         }
         private void ACBtn_Click(object sender, EventArgs e)
@@ -208,12 +204,21 @@ namespace Calculator
             if (inputBox.Text.Length > 0)
             {
                 inputBox.Text = inputBox.Text.Substring(0, inputBox.Text.Length - 1);
+
+                formulaBox.Text = formulaBox.Text.Substring(0, formulaBox.Text.Length - 1);
+
             }
         }
 
         private void his_Click(object sender, EventArgs e)
         {
-            string message = string.Join(Environment.NewLine, history);
+            string message = "";
+
+            if (formulaBox.Text.Contains("="))
+            {
+                message = string.Join(Environment.NewLine, history);
+            }
+
             MessageBox.Show(message + "\r\n");
         }
         private void button1_Click(object sender, EventArgs e)
@@ -266,21 +271,6 @@ namespace Calculator
             AppendToInputBox("0");
         }
 
-        private void ACBtn_Click(object sender, EventArgs e)
-        {
-            inputBox.Text = "";
-            resultBox.Text = "";
-            numbers.Clear();
-            operators.Clear();
-        }
-
-        private void erase_Click(object sender, EventArgs e)
-        {
-            if (inputBox.Text.Length > 0)
-            {
-                inputBox.Text = inputBox.Text.Substring(0, inputBox.Text.Length - 1);
-            }
-        }
 
         //양수, 음수 전환
         private void reverse_Click(object sender, EventArgs e)
@@ -294,7 +284,7 @@ namespace Calculator
                 double a = double.Parse(inputBox.Text);
                 inputBox.Clear();
                 a = -a;
-                inputBox.Text += a.ToString("N2");
+                inputBox.Text += a.ToString("N0");
             }
         }
 
