@@ -9,11 +9,15 @@ namespace Calculator
         public Calcul()
         {
             InitializeComponent();
-        }   
+        }
 
         List<int> numbers = new List<int>();
         List<string> operators = new List<string>();
-     
+        bool calculationCompleted = false;
+
+        string[] history = { "", "", "", "", "" };
+
+        int j = 0;
 
         private void minus_Click(object sender, EventArgs e)
         {
@@ -37,7 +41,8 @@ namespace Calculator
 
         private void AddNumberAndOperator(string op)
         {
-            //처음에 담기지 않아야함
+            history[j] += op;
+
             if (inputBox.Text != "")
             {
                 int number;
@@ -45,6 +50,7 @@ namespace Calculator
                 {
                     numbers.Add(number);
                     operators.Add(op);
+                    formulaBox.Text += " "+ op + " ";
                     inputBox.Text = "";
                 }
 
@@ -53,24 +59,33 @@ namespace Calculator
 
         private void execute_Click(object sender, EventArgs e)
         {
+            if (j >= 5)
+            {
+                for (int i = 1; i < history.Length; i++)
+                {
+                    history[i - 1] = history[i];
+                }
+                history[4] = "";
+                j = 4;
+            }
+
             if (inputBox.Text != "")
             {
                 int number;
-                //변환되면 number이고 아니면 false
-            
                 if (int.TryParse(inputBox.Text, out number))
                 {
                     numbers.Add(number);
+                    history[j] += "=";
                     CalculateResult();
                 }
-
-
             }
+            calculationCompleted = true;
+            j++;
+            
         }
-        
+
         private void CalculateResult()
         {
-            // Step 1: 곱셈, 나눗셈 찾아서 먼저 계산
             for (int i = 0; i < operators.Count; i++)
             {
                 if (operators[i] == "*" || operators[i] == "/")
@@ -94,15 +109,13 @@ namespace Calculator
                     }
 
                     numbers[i] = result;
-
-                    //연산한 숫자와 연산자 제거
                     numbers.RemoveAt(i + 1);
                     operators.RemoveAt(i);
-                    i--; // index 이전으로 옮김
+                   
+                    i--;
                 }
             }
 
-            // Step 2: 나머지 덧셈과 뺄셈 진행
             int finalResult = numbers[0];
             for (int i = 0; i < operators.Count; i++)
             {
@@ -117,20 +130,60 @@ namespace Calculator
                 }
             }
 
-            // ,000
             resultBox.Text = finalResult.ToString("N0");
+            history[j] += finalResult.ToString("N0");
+            
+            formulaBox.Text += " = " + finalResult;
             inputBox.Text = "";
             numbers.Clear();
             operators.Clear();
-
         }
 
-        //숫자 입력
         private void AppendToInputBox(string value)
         {
+            if (calculationCompleted)
+            {
+                formulaBox.Text = "";
+                resultBox.Text = "";
+                calculationCompleted = false;
+            }
+            if (j >= 5)
+            {
+                for (int i = 1; i < history.Length; i++)
+                {
+                    history[i - 1] = history[i];
+                }
+                history[4] = "";
+                j = 4;
+            }
             inputBox.Text += value;
+            history[j] += value;
+            formulaBox.Text += value;
+        }
+        private void ACBtn_Click(object sender, EventArgs e)
+        {
+            inputBox.Text = "";
+            resultBox.Text = "";
+            formulaBox.Text = "";
+            numbers.Clear();
+            operators.Clear();
+            Array.Clear(history, 0, history.Length);
+            j = 0;
         }
 
+        private void erase_Click(object sender, EventArgs e)
+        {
+            if (inputBox.Text.Length > 0)
+            {
+                inputBox.Text = inputBox.Text.Substring(0, inputBox.Text.Length - 1);
+            }
+        }
+
+        private void his_Click(object sender, EventArgs e)
+        {
+            string message = string.Join(Environment.NewLine, history);
+            MessageBox.Show(message + "\r\n");
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             AppendToInputBox("1");
@@ -176,20 +229,8 @@ namespace Calculator
             AppendToInputBox("9");
         }
 
-        private void ACBtn_Click(object sender, EventArgs e)
-        {
-            inputBox.Text = "";
-            resultBox.Text = "";
-            numbers.Clear();
-            operators.Clear();
-        }
+        
 
-        private void erase_Click(object sender, EventArgs e)
-        {
-            if (inputBox.Text.Length > 0)
-            {
-                inputBox.Text = inputBox.Text.Substring(0, inputBox.Text.Length - 1);
-            }
-        }
+
     }
 }
