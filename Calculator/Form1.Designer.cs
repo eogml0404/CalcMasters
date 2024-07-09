@@ -46,6 +46,9 @@
             this.erase = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.div = new System.Windows.Forms.Button();
+            this.reverse = new System.Windows.Forms.Button();
+            this.button0 = new System.Windows.Forms.Button();
+            this.remainder = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.his = new System.Windows.Forms.Button();
             this.formulaBox = new System.Windows.Forms.TextBox();
@@ -245,7 +248,25 @@
             this.div.UseVisualStyleBackColor = true;
             this.div.Click += new System.EventHandler(this.divide_Click);
             // 
-            // button11
+            // reverse
+            // 
+            this.reverse.Location = new System.Drawing.Point(454, 368);
+            this.reverse.Name = "reverse";
+            this.reverse.Size = new System.Drawing.Size(60, 62);
+            this.reverse.TabIndex = 18;
+            this.reverse.Text = "+/-";
+            this.reverse.UseVisualStyleBackColor = true;
+            this.reverse.Click += new System.EventHandler(this.reverse_Click);
+            // 
+            // button0
+            // 
+            this.button0.Location = new System.Drawing.Point(158, 458);
+            this.button0.Name = "button0";
+            this.button0.Size = new System.Drawing.Size(60, 62);
+            this.button0.TabIndex = 19;
+            this.button0.Text = "0";
+            this.button0.UseVisualStyleBackColor = true;
+            this.button0.Click += new System.EventHandler(this.button0_Click);
             // 
             this.button11.Location = new System.Drawing.Point(832, 499);
             this.button11.Margin = new System.Windows.Forms.Padding(4);
@@ -254,6 +275,7 @@
             this.button11.TabIndex = 18;
             this.button11.Text = "button11";
             this.button11.UseVisualStyleBackColor = true;
+            // remainder
             // 
             // his
             // 
@@ -272,15 +294,27 @@
             this.formulaBox.Name = "formulaBox";
             this.formulaBox.Size = new System.Drawing.Size(466, 28);
             this.formulaBox.TabIndex = 20;
+            this.remainder.Location = new System.Drawing.Point(365, 459);
+            this.remainder.Name = "remainder";
+            this.remainder.Size = new System.Drawing.Size(60, 62);
+            this.remainder.TabIndex = 20;
+            this.remainder.Text = "%";
+            this.remainder.UseVisualStyleBackColor = true;
+            this.remainder.Click += new System.EventHandler(this.remainder_Click);
             // 
             // Calcul
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1326, 698);
             this.Controls.Add(this.formulaBox);
             this.Controls.Add(this.his);
             this.Controls.Add(this.button11);
+            this.ClientSize = new System.Drawing.Size(1061, 582);
+            this.Controls.Add(this.remainder);
+            this.Controls.Add(this.button0);
+            this.Controls.Add(this.reverse);
             this.Controls.Add(this.div);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.erase);
@@ -330,6 +364,9 @@
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button his;
         private System.Windows.Forms.TextBox formulaBox;
+        private System.Windows.Forms.Button reverse;
+        private System.Windows.Forms.Button button0;
+        private System.Windows.Forms.Button remainder;
     }
 }
 
