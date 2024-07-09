@@ -58,11 +58,12 @@ namespace Calculator
             // 
             // inputBox
             // 
-            this.inputBox.Location = new System.Drawing.Point(79, 95);
+            this.inputBox.Font = new System.Drawing.Font("굴림", 14F);
+            this.inputBox.Location = new System.Drawing.Point(79, 118);
             this.inputBox.Margin = new System.Windows.Forms.Padding(2);
             this.inputBox.Multiline = true;
             this.inputBox.Name = "inputBox";
-            this.inputBox.Size = new System.Drawing.Size(699, 128);
+            this.inputBox.Size = new System.Drawing.Size(699, 105);
             this.inputBox.TabIndex = 0;
             this.inputBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -323,11 +324,12 @@ namespace Calculator
             // 
             // formulaBox
             // 
+            this.formulaBox.Font = new System.Drawing.Font("굴림", 16F);
             this.formulaBox.Location = new System.Drawing.Point(79, 35);
             this.formulaBox.Margin = new System.Windows.Forms.Padding(4);
             this.formulaBox.Name = "formulaBox";
             this.formulaBox.ReadOnly = true;
-            this.formulaBox.Size = new System.Drawing.Size(699, 28);
+            this.formulaBox.Size = new System.Drawing.Size(699, 44);
             this.formulaBox.TabIndex = 20;
             this.formulaBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 

@@ -45,6 +45,7 @@ namespace Calculator
             AddNumberAndOperator("%");
         }
 
+        //부호 클릭시 실행 -> 입력 숫자와 연산자가 리스트에 담긴다.
         private void AddNumberAndOperator(string op)
         {
 
@@ -59,6 +60,8 @@ namespace Calculator
                 inputBox.Text = "";
 
             }
+
+            //연산자 두번 들어가지 않게 설정
             if (operators.Count > 0 && (numbers.Count == operators.Count))
             {
 
@@ -69,6 +72,7 @@ namespace Calculator
             }
         }
 
+        // = 버튼 클릭시 실행 -> history가 5개 이상일시 가장 오래된것을 지운다.
         private void execute_Click(object sender, EventArgs e)
         {
             if (numbers.Count > 0)
@@ -100,9 +104,10 @@ namespace Calculator
             
         }
 
+        // 계산하는 함수 operators 리스트 돌면서 계산 
         private void CalculateResult()
         {
-            // Step 1: 곱셈, 나눗셈 찾아서 먼저 계산
+            // Step 1: 곱셈, 나눗셈, 나머지 찾아서 먼저 계산
             for (int i = 0; i < operators.Count; i++)
             {
                 if (operators[i] == "*" || operators[i] == "/" || operators[i] == "%")
@@ -169,6 +174,7 @@ namespace Calculator
                         
             formulaBox.Text += " = " + finalResult.ToString("N2");
       
+            //내역에 저장
             history[j] = formulaBox.Text;
 
             inputBox.Text = "";
@@ -176,8 +182,10 @@ namespace Calculator
             operators.Clear();
         }
 
+        //숫자 입력 함수
         private void AppendToInputBox(string value)
         {
+            //계산이 완료된후 숫자를 누르면 초기화 되게함
             if (calculationCompleted)
             {
                 formulaBox.Text = "";
