@@ -14,6 +14,9 @@ namespace Calculator
         List<double> numbers = new List<double>();
         List<string> operators = new List<string>();
         bool calculationCompleted = false;
+        bool negateNextNumber = false;
+
+
 
         string[] history = { "", "", "", "", "" };
 
@@ -48,17 +51,26 @@ namespace Calculator
         {
             history[j] += op;
 
-            if (inputBox.Text != "")
+            double number;
+            if (double.TryParse(inputBox.Text, out number))
             {
-                double number;
-                if (double.TryParse(inputBox.Text, out number))
-                {
-                    numbers.Add(number);
-                    operators.Add(op);
-                    formulaBox.Text += " "+ op + " ";
-                    inputBox.Text = "";
-                }
 
+                // 새로운 연산자를 추가한다
+                numbers.Add(number);
+                operators.Add(op);
+                formulaBox.Text += " " + op + " ";
+                history[j] += op;
+                inputBox.Text = "";
+
+            }
+            if (operators.Count > 0 && (numbers.Count == operators.Count))
+            {
+
+                // 마지막 연산자를 바꾼다
+                operators[operators.Count - 1] = op;
+                // 수식 상자에서 마지막 연산자를 바꾼다
+                formulaBox.Text = formulaBox.Text.Substring(0, formulaBox.Text.Length - 2) + op + " ";
+                history[j] = history[j].Substring(0, history[j].Length - 2) + op;
             }
         }
 
@@ -78,7 +90,7 @@ namespace Calculator
             {
                 double number;
                 //변환되면 number이고 아니면 false
-            
+
                 if (double.TryParse(inputBox.Text, out number))
                 {
                     numbers.Add(number);
@@ -88,7 +100,7 @@ namespace Calculator
             }
             calculationCompleted = true;
             j++;
-            
+
         }
 
         private void CalculateResult()
@@ -129,7 +141,7 @@ namespace Calculator
                     numbers[i] = result;
                     numbers.RemoveAt(i + 1);
                     operators.RemoveAt(i);
-                   
+
                     i--;
                 }
             }
@@ -151,7 +163,7 @@ namespace Calculator
 
             resultBox.Text = finalResult.ToString("N0");
             history[j] += finalResult.ToString("N0");
-            
+
             formulaBox.Text += " = " + finalResult;
             inputBox.Text = "";
             numbers.Clear();
@@ -165,6 +177,7 @@ namespace Calculator
                 formulaBox.Text = "";
                 resultBox.Text = "";
                 calculationCompleted = false;
+                negateNextNumber = false;
             }
             if (j >= 5)
             {
@@ -174,6 +187,13 @@ namespace Calculator
                 }
                 history[4] = "";
                 j = 4;
+            }
+            if (negateNextNumber)
+            {
+                inputBox.Text += "-";
+                formulaBox.Text += "-";
+                history[j] += "-";
+                negateNextNumber = false;
             }
             inputBox.Text += value;
             history[j] += value;
@@ -186,8 +206,6 @@ namespace Calculator
             formulaBox.Text = "";
             numbers.Clear();
             operators.Clear();
-            Array.Clear(history, 0, history.Length);
-            j = 0;
         }
 
         private void erase_Click(object sender, EventArgs e)
@@ -253,31 +271,22 @@ namespace Calculator
             AppendToInputBox("0");
         }
 
-        private void ACBtn_Click(object sender, EventArgs e)
-        {
-            inputBox.Text = "";
-            resultBox.Text = "";
-            numbers.Clear();
-            operators.Clear();
-        }
-
-        private void erase_Click(object sender, EventArgs e)
-        {
-            if (inputBox.Text.Length > 0)
-            {
-                inputBox.Text = inputBox.Text.Substring(0, inputBox.Text.Length - 1);
-            }
-        }
-
         //양수, 음수 전환
         private void reverse_Click(object sender, EventArgs e)
         {
-            double a = double.Parse(inputBox.Text);
-            inputBox.Clear();
-            a = -a;
-            inputBox.Text += a.ToString();
+            if (inputBox.Text == "")
+            {
+                negateNextNumber = true;
+            }
+            else
+            {
+                double a = double.Parse(inputBox.Text);
+                inputBox.Clear();
+                a = -a;
+                inputBox.Text += a.ToString();
+            }
         }
 
-        
     }
+
 }
