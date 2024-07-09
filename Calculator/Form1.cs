@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Calculator
@@ -70,29 +71,33 @@ namespace Calculator
 
         private void execute_Click(object sender, EventArgs e)
         {
-            if (j >= 5)
+            if (numbers.Count > 0)
             {
-                for (int i = 1; i < history.Length; i++)
+                if (j >= 5)
                 {
-                    history[i - 1] = history[i];
+                    for (int i = 1; i < history.Length; i++)
+                    {
+                        history[i - 1] = history[i];
+                    }
+                    history[4] = "";
+                    j = 4;
                 }
-                history[4] = "";
-                j = 4;
-            }
 
-            if (inputBox.Text != "")
-            {
-                double number;
-                if (double.TryParse(inputBox.Text, out number))
+                if (inputBox.Text != "")
                 {
-                    numbers.Add(number);
-                    history[j] += "=";
-                    CalculateResult();
+                    double number;
+                    if (double.TryParse(inputBox.Text, out number))
+                    {
+                        numbers.Add(number);
+                        history[j] += "=";
+                        CalculateResult();
 
+                    }
                 }
+                calculationCompleted = true;
+                j++;
             }
-            calculationCompleted = true;
-            j++;
+            
         }
 
         private void CalculateResult()
@@ -139,7 +144,7 @@ namespace Calculator
                 }
             }
 
-            // Step 2: 나머지 덧셈과 뺄셈 진행
+            // Step 2:  덧셈과 뺄셈 진행
             double finalResult = numbers[0];
             for (int i = 0; i < operators.Count; i++)
             {
@@ -161,15 +166,14 @@ namespace Calculator
             {
                 resultBox.Text += finalResult.ToString("N2");
             }
-            
-            
+                        
             formulaBox.Text += " = " + finalResult.ToString("N2");
+      
             history[j] = formulaBox.Text;
+
             inputBox.Text = "";
             numbers.Clear();
             operators.Clear();
-        }
-
         }
 
         private void AppendToInputBox(string value)
@@ -221,7 +225,8 @@ namespace Calculator
                 message = string.Join(Environment.NewLine, history);
             }
 
-            MessageBox.Show(message + "\r\n");
+            MessageBox.Show(message + "\r\n" , "계산 내역 (최대 5개)");
+
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -273,21 +278,7 @@ namespace Calculator
             AppendToInputBox("0");
         }
 
-        private void ACBtn_Click(object sender, EventArgs e)
-        {
-            inputBox.Text = "";
-            resultBox.Text = "";
-            numbers.Clear();
-            operators.Clear();
-        }
 
-        private void erase_Click(object sender, EventArgs e)
-        {
-            if (inputBox.Text.Length > 0)
-            {
-                inputBox.Text = inputBox.Text.Substring(0, inputBox.Text.Length - 1);
-            }
-        }
 
         //양수, 음수 전환
         private void reverse_Click(object sender, EventArgs e)
@@ -296,22 +287,27 @@ namespace Calculator
             {
                 AppendToInputBox("-");
             }
-
-            else
-            if (inputBox.Text.EndsWith("-", StringComparison.OrdinalIgnoreCase) && formulaBox.Text.EndsWith("-", StringComparison.OrdinalIgnoreCase))
-            {
-                inputBox.Text = inputBox.Text.Remove(inputBox.Text.Length - 1);
-                formulaBox.Text = formulaBox.Text.Remove(formulaBox.Text.Length - 1);
-            }
-
             else
             {
-                double a = double.Parse(inputBox.Text);
-                inputBox.Clear();
-                formulaBox.Clear();
-                a = -a;
-                inputBox.Text += a.ToString("N0");
-                formulaBox.Text += a.ToString("N0");
+                //StringSplitOptions.RemoveEmptyEntries => 빈 항목을 제거
+                string[] inputParts = inputBox.Text.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                string[] formulaParts = formulaBox.Text.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+               
+                //마지막 부분이 숫자면 실행
+                if (double.TryParse(inputParts.Last(), out double lastNumber) && double.TryParse(formulaParts.Last(), out double lastFormulaNumber))
+                {
+                   
+                    lastNumber = -lastNumber;
+                    lastFormulaNumber = -lastFormulaNumber;
+
+                    inputParts[inputParts.Length - 1] = lastNumber.ToString("N0");
+                    formulaParts[formulaParts.Length - 1] = lastFormulaNumber.ToString("N0");
+
+                    // 박스에 숫자 추가
+                    inputBox.Text = string.Join(" ", inputParts);
+                    formulaBox.Text = string.Join(" ", formulaParts);
+                }
             }
         }
 

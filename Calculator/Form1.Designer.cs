@@ -1,4 +1,6 @@
-﻿namespace Calculator
+﻿using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+
+namespace Calculator
 {
     partial class Calcul
     {
@@ -56,16 +58,18 @@
             // 
             // inputBox
             // 
-            this.inputBox.Location = new System.Drawing.Point(104, 91);
+            this.inputBox.Location = new System.Drawing.Point(79, 95);
             this.inputBox.Margin = new System.Windows.Forms.Padding(2);
             this.inputBox.Multiline = true;
             this.inputBox.Name = "inputBox";
-            this.inputBox.Size = new System.Drawing.Size(582, 128);
+            this.inputBox.Size = new System.Drawing.Size(699, 128);
             this.inputBox.TabIndex = 0;
+            this.inputBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(104, 306);
+            this.button1.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button1.Location = new System.Drawing.Point(79, 408);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(94, 89);
@@ -76,7 +80,8 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(249, 306);
+            this.button2.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button2.Location = new System.Drawing.Point(224, 408);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(94, 89);
@@ -87,7 +92,8 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(399, 306);
+            this.button3.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button3.Location = new System.Drawing.Point(374, 408);
             this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(94, 89);
@@ -98,7 +104,8 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(104, 440);
+            this.button4.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button4.Location = new System.Drawing.Point(79, 542);
             this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(94, 89);
@@ -109,7 +116,8 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(249, 440);
+            this.button5.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button5.Location = new System.Drawing.Point(224, 542);
             this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(94, 89);
@@ -120,7 +128,8 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(399, 440);
+            this.button6.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button6.Location = new System.Drawing.Point(374, 542);
             this.button6.Margin = new System.Windows.Forms.Padding(2);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(94, 89);
@@ -131,7 +140,8 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(104, 584);
+            this.button7.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button7.Location = new System.Drawing.Point(79, 686);
             this.button7.Margin = new System.Windows.Forms.Padding(2);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(94, 89);
@@ -142,7 +152,8 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(249, 584);
+            this.button8.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button8.Location = new System.Drawing.Point(224, 686);
             this.button8.Margin = new System.Windows.Forms.Padding(2);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(94, 89);
@@ -153,7 +164,8 @@
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(399, 584);
+            this.button9.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button9.Location = new System.Drawing.Point(374, 686);
             this.button9.Margin = new System.Windows.Forms.Padding(2);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(94, 89);
@@ -164,7 +176,8 @@
             // 
             // plus
             // 
-            this.plus.Location = new System.Drawing.Point(564, 306);
+            this.plus.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.plus.Location = new System.Drawing.Point(539, 686);
             this.plus.Margin = new System.Windows.Forms.Padding(2);
             this.plus.Name = "plus";
             this.plus.Size = new System.Drawing.Size(94, 89);
@@ -175,7 +188,8 @@
             // 
             // minus
             // 
-            this.minus.Location = new System.Drawing.Point(564, 440);
+            this.minus.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.minus.Location = new System.Drawing.Point(539, 542);
             this.minus.Margin = new System.Windows.Forms.Padding(2);
             this.minus.Name = "minus";
             this.minus.Size = new System.Drawing.Size(94, 89);
@@ -186,30 +200,39 @@
             // 
             // execute
             // 
-            this.execute.Location = new System.Drawing.Point(564, 584);
+            this.execute.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.execute.Font = new System.Drawing.Font("굴림", 30F, System.Drawing.FontStyle.Bold);
+            this.execute.ForeColor = System.Drawing.Color.White;
+            this.execute.Location = new System.Drawing.Point(539, 816);
             this.execute.Margin = new System.Windows.Forms.Padding(2);
             this.execute.Name = "execute";
-            this.execute.Size = new System.Drawing.Size(94, 89);
+            this.execute.Size = new System.Drawing.Size(239, 89);
             this.execute.TabIndex = 12;
             this.execute.Text = "=";
-            this.execute.UseVisualStyleBackColor = true;
+            this.execute.UseVisualStyleBackColor = false;
             this.execute.Click += new System.EventHandler(this.execute_Click);
             // 
             // resultBox
             // 
-            this.resultBox.Location = new System.Drawing.Point(399, 241);
+            this.resultBox.BackColor = System.Drawing.Color.White;
+            this.resultBox.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold);
+            this.resultBox.ForeColor = System.Drawing.Color.Red;
+            this.resultBox.Location = new System.Drawing.Point(539, 296);
             this.resultBox.Margin = new System.Windows.Forms.Padding(2);
             this.resultBox.Multiline = true;
             this.resultBox.Name = "resultBox";
-            this.resultBox.Size = new System.Drawing.Size(256, 33);
+            this.resultBox.ReadOnly = true;
+            this.resultBox.Size = new System.Drawing.Size(239, 28);
             this.resultBox.TabIndex = 13;
+            this.resultBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // ACBtn
             // 
-            this.ACBtn.Location = new System.Drawing.Point(104, 224);
+            this.ACBtn.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ACBtn.Location = new System.Drawing.Point(79, 275);
             this.ACBtn.Margin = new System.Windows.Forms.Padding(2);
             this.ACBtn.Name = "ACBtn";
-            this.ACBtn.Size = new System.Drawing.Size(94, 64);
+            this.ACBtn.Size = new System.Drawing.Size(155, 64);
             this.ACBtn.TabIndex = 14;
             this.ACBtn.Text = "AC";
             this.ACBtn.UseVisualStyleBackColor = true;
@@ -217,10 +240,11 @@
             // 
             // erase
             // 
-            this.erase.Location = new System.Drawing.Point(249, 224);
+            this.erase.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.erase.Location = new System.Drawing.Point(539, 408);
             this.erase.Margin = new System.Windows.Forms.Padding(2);
             this.erase.Name = "erase";
-            this.erase.Size = new System.Drawing.Size(94, 64);
+            this.erase.Size = new System.Drawing.Size(94, 89);
             this.erase.TabIndex = 15;
             this.erase.Text = "<<";
             this.erase.UseVisualStyleBackColor = true;
@@ -228,7 +252,8 @@
             // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(711, 306);
+            this.button10.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button10.Location = new System.Drawing.Point(684, 408);
             this.button10.Margin = new System.Windows.Forms.Padding(2);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(94, 89);
@@ -239,7 +264,8 @@
             // 
             // div
             // 
-            this.div.Location = new System.Drawing.Point(711, 440);
+            this.div.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.div.Location = new System.Drawing.Point(684, 542);
             this.div.Margin = new System.Windows.Forms.Padding(2);
             this.div.Name = "div";
             this.div.Size = new System.Drawing.Size(94, 89);
@@ -250,9 +276,10 @@
             // 
             // reverse
             // 
-            this.reverse.Location = new System.Drawing.Point(711, 91);
+            this.reverse.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.reverse.Location = new System.Drawing.Point(79, 816);
             this.reverse.Name = "reverse";
-            this.reverse.Size = new System.Drawing.Size(75, 74);
+            this.reverse.Size = new System.Drawing.Size(94, 89);
             this.reverse.TabIndex = 18;
             this.reverse.Text = "+/-";
             this.reverse.UseVisualStyleBackColor = true;
@@ -260,10 +287,11 @@
             // 
             // button0
             // 
-            this.button0.Location = new System.Drawing.Point(997, 91);
+            this.button0.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button0.Location = new System.Drawing.Point(224, 816);
             this.button0.Margin = new System.Windows.Forms.Padding(4);
             this.button0.Name = "button0";
-            this.button0.Size = new System.Drawing.Size(75, 74);
+            this.button0.Size = new System.Drawing.Size(94, 89);
             this.button0.TabIndex = 19;
             this.button0.Text = "0";
             this.button0.UseVisualStyleBackColor = true;
@@ -271,10 +299,11 @@
             // 
             // remainder
             // 
-            this.remainder.Location = new System.Drawing.Point(868, 91);
+            this.remainder.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.remainder.Location = new System.Drawing.Point(684, 686);
             this.remainder.Margin = new System.Windows.Forms.Padding(4);
             this.remainder.Name = "remainder";
-            this.remainder.Size = new System.Drawing.Size(75, 74);
+            this.remainder.Size = new System.Drawing.Size(94, 89);
             this.remainder.TabIndex = 20;
             this.remainder.Text = "%";
             this.remainder.UseVisualStyleBackColor = true;
@@ -282,10 +311,11 @@
             // 
             // his
             // 
-            this.his.Location = new System.Drawing.Point(868, 306);
+            this.his.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.his.Location = new System.Drawing.Point(261, 275);
             this.his.Margin = new System.Windows.Forms.Padding(2);
             this.his.Name = "his";
-            this.his.Size = new System.Drawing.Size(311, 89);
+            this.his.Size = new System.Drawing.Size(207, 64);
             this.his.TabIndex = 19;
             this.his.Text = "history";
             this.his.UseVisualStyleBackColor = true;
@@ -293,17 +323,20 @@
             // 
             // formulaBox
             // 
-            this.formulaBox.Location = new System.Drawing.Point(104, 31);
+            this.formulaBox.Location = new System.Drawing.Point(79, 35);
             this.formulaBox.Margin = new System.Windows.Forms.Padding(4);
             this.formulaBox.Name = "formulaBox";
-            this.formulaBox.Size = new System.Drawing.Size(582, 28);
+            this.formulaBox.ReadOnly = true;
+            this.formulaBox.Size = new System.Drawing.Size(699, 28);
             this.formulaBox.TabIndex = 20;
+            this.formulaBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // dot
             // 
-            this.dot.Location = new System.Drawing.Point(822, 481);
+            this.dot.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Bold);
+            this.dot.Location = new System.Drawing.Point(374, 816);
             this.dot.Name = "dot";
-            this.dot.Size = new System.Drawing.Size(57, 67);
+            this.dot.Size = new System.Drawing.Size(94, 89);
             this.dot.TabIndex = 21;
             this.dot.Text = ".";
             this.dot.UseVisualStyleBackColor = true;
@@ -313,8 +346,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1222, 724);
-            this.ClientSize = new System.Drawing.Size(1061, 582);
+            this.ClientSize = new System.Drawing.Size(852, 956);
             this.Controls.Add(this.dot);
             this.Controls.Add(this.formulaBox);
             this.Controls.Add(this.his);
@@ -341,7 +373,7 @@
             this.Controls.Add(this.inputBox);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Calcul";
-            this.Text = "Form1";
+            this.Text = "계산기";
             this.ResumeLayout(false);
             this.PerformLayout();
 
