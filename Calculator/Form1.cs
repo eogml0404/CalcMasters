@@ -130,7 +130,7 @@ namespace Calculator
                     numbers[i] = result;
                     numbers.RemoveAt(i + 1);
                     operators.RemoveAt(i);
-                   
+
                     i--;
                 }
             }
@@ -158,11 +158,18 @@ namespace Calculator
                 resultBox.Text += finalResult.ToString("N2");
             }
             history[j] += finalResult.ToString("N2");
-            
-            formulaBox.Text += " = " + finalResult.ToString("N2");
-            inputBox.Text = "";
-            numbers.Clear();
-            operators.Clear();
+            if (finalResult % 1 == 0)
+            {
+                formulaBox.Text += " = " + finalResult.ToString("N0");
+            }
+            else
+            { 
+                formulaBox.Text += " = " + finalResult.ToString("N2");
+                inputBox.Text = "";
+                numbers.Clear();
+                operators.Clear();
+            }
+
         }
 
         private void AppendToInputBox(string value)
@@ -247,6 +254,7 @@ namespace Calculator
         {
             inputBox.Text = "";
             resultBox.Text = "";
+            formulaBox.Text = "";
             numbers.Clear();
             operators.Clear();
         }
@@ -257,6 +265,21 @@ namespace Calculator
             {
                 inputBox.Text = inputBox.Text.Substring(0, inputBox.Text.Length - 1);
             }
+
+            if (formulaBox.Text.Length > 0)
+            {
+                formulaBox.Text = formulaBox.Text.Substring(0, formulaBox.Text.Length - 1);
+            }
+
+            /*if (numbers.Count == operators.Count)
+            {
+                operators.RemoveAt(operators.Count - 1);
+            }
+
+            else
+            {
+                numbers.RemoveAt(numbers.Count - 1);
+            }*/
         }
 
         //양수, 음수 전환
@@ -266,15 +289,37 @@ namespace Calculator
             {
                 AppendToInputBox("-");
             }
+
+            else
+            if (inputBox.Text.EndsWith("-", StringComparison.OrdinalIgnoreCase) && formulaBox.Text.EndsWith("-", StringComparison.OrdinalIgnoreCase))
+            {
+                inputBox.Text = inputBox.Text.Remove(inputBox.Text.Length - 1);
+                formulaBox.Text = formulaBox.Text.Remove(formulaBox.Text.Length - 1);
+            }
+
             else
             {
                 double a = double.Parse(inputBox.Text);
                 inputBox.Clear();
+                formulaBox.Clear();
                 a = -a;
-                inputBox.Text += a.ToString("N2");
+                inputBox.Text += a.ToString("N0");
+                formulaBox.Text += a.ToString("N0");
             }
         }
 
-        
+        private void dot_Click(object sender, EventArgs e)
+        {
+            if (inputBox.Text.Contains("."))
+            {
+                return;
+            }
+            else
+            {
+                inputBox.Text += ".";
+                formulaBox.Text += ".";
+            } 
+        }
+
     }
 }
