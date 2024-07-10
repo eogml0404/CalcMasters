@@ -319,11 +319,17 @@ namespace Calculator
 
         private void dot_Click(object sender, EventArgs e)
         {
+
             if (inputBox.Text.Contains("."))
             {
                 return;
             }
-            else
+            else if(inputBox.Text == "")
+            {
+                inputBox.Text += 0.ToString() + ".";
+                formulaBox.Text +=0.ToString() + ".";
+            }
+            else 
             {
                 inputBox.Text += ".";
                 formulaBox.Text += ".";
