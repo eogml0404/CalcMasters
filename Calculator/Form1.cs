@@ -228,9 +228,7 @@ namespace Calculator
         {
             string message = "";
 
-            if (formulaBox.Text.Contains("="))
-            {
-                message = string.Join(Environment.NewLine, history);
+            message = string.Join(Environment.NewLine, history);
             
 
             MessageBox.Show(message + "\r\n" , "계산 내역 (최대 5개)");
