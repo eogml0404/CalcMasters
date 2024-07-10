@@ -192,15 +192,7 @@ namespace Calculator
                 resultBox.Text = "";
                 calculationCompleted = false;
             }
-            if (j >= 5)
-            {
-                for (int i = 1; i < history.Length; i++)
-                {
-                    history[i - 1] = history[i];
-                }
-                history[4] = "";
-                j = 4;
-            }
+
             inputBox.Text += value;
             formulaBox.Text += value;
         }
@@ -319,6 +311,13 @@ namespace Calculator
         //소수점 버튼
         private void dot_Click(object sender, EventArgs e)
         {
+            //계산이 완료된후 숫자를 누르면 초기화 되게함
+            if (calculationCompleted)
+            {
+                formulaBox.Text = "";
+                resultBox.Text = "";
+                calculationCompleted = false;
+            }
 
             if (inputBox.Text.Contains("."))
             {

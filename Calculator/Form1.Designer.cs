@@ -63,6 +63,7 @@ namespace Calculator
             this.inputBox.Margin = new System.Windows.Forms.Padding(2);
             this.inputBox.Multiline = true;
             this.inputBox.Name = "inputBox";
+            this.inputBox.ReadOnly = true;
             this.inputBox.Size = new System.Drawing.Size(699, 105);
             this.inputBox.TabIndex = 0;
             this.inputBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
