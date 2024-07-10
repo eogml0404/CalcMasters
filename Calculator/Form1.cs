@@ -316,7 +316,7 @@ namespace Calculator
                 }
             }
         }
-
+        //소수점 버튼
         private void dot_Click(object sender, EventArgs e)
         {
 
