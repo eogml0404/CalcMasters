@@ -93,7 +93,7 @@ namespace Calculator
                     if (double.TryParse(inputBox.Text, out number))
                     {
                         numbers.Add(number);
-                        history[j] += "=";
+
                         CalculateResult();
 
                     }
@@ -101,12 +101,13 @@ namespace Calculator
                 calculationCompleted = true;
                 j++;
             }
-            
+
         }
 
         // 계산하는 함수 operators 리스트 돌면서 계산 
         private void CalculateResult()
         {
+            bool isError = false; // 오류 플래그 추가
             // Step 1: 곱셈, 나눗셈, 나머지 찾아서 먼저 계산
             for (int i = 0; i < operators.Count; i++)
             {
@@ -114,43 +115,51 @@ namespace Calculator
                 {
                     double rhs = numbers[i + 1];
                     double lhs = numbers[i];
-                    double result;
+                    double result = 0;
+                    
 
                     if (operators[i] == "*")
                     {
                         result = lhs * rhs;
                     }
-                    else
+                    else if (operators[i] == "/")
                     {
                         if (rhs == 0)
                         {
-                            resultBox.Text = "Error: Division by zero!";
-                            inputBox.Text = "Error: Division by zero!";
-                            return;
+                            MessageBox.Show("Division By Zero!", "Error");
+                            isError = true; // 오류 발생 시 플래그 설정
                         }
                         else
                         {
-                            if (operators[i] == "/")
-                            {
-                                result = lhs / rhs;
-                            }
-                            else
-                            {
-                                result = lhs % rhs;
-                            }
+                            result = lhs / rhs;
+                        }
+                    }
+                    else if (operators[i] == "%")
+                    {
+                        if (rhs == 0)
+                        {
+                            MessageBox.Show("Division By Zero!", "Error");
+                            isError = true; // 오류 발생 시 플래그 설정
+                        }
+                        else
+                        {
+                            result = lhs % rhs;
                         }
                     }
 
-                    numbers[i] = result;
-                    numbers.RemoveAt(i + 1);
-                    operators.RemoveAt(i);
-
-                    i--;
+                    if (!isError) // 오류가 없을 때만 리스트 수정
+                    {
+                        numbers[i] = result;
+                        numbers.RemoveAt(i + 1);
+                        operators.RemoveAt(i);
+                        i--; // 리스트의 변경을 반영하기 위해 인덱스를 줄임
+                    }
                 }
-            }
-
-            // Step 2:  덧셈과 뺄셈 진행
-            double finalResult = numbers[0];
+            
+        }
+    
+        // Step 2:  덧셈과 뺄셈 진행
+        double finalResult = numbers[0];
             for (int i = 0; i < operators.Count; i++)
             {
                 switch (operators[i])
@@ -163,19 +172,28 @@ namespace Calculator
                         break;
                 }
             }
-            if (finalResult % 1 == 0)
+            if (!isError)
             {
-                resultBox.Text = finalResult.ToString("N0");
+                    if (finalResult % 1 == 0)
+                {
+                    resultBox.Text = finalResult.ToString("N0");
+                }
+                else
+                {
+                    resultBox.Text += finalResult.ToString("N2");
+                }
+                        
+                formulaBox.Text += " = " + finalResult.ToString("N2");
+
+                //내역에 저장
+        
+                history[j] = formulaBox.Text;
             }
             else
             {
-                resultBox.Text += finalResult.ToString("N2");
+                j--;
             }
-                        
-            formulaBox.Text += " = " + finalResult.ToString("N2");
-      
-            //내역에 저장
-            history[j] = formulaBox.Text;
+           
 
             inputBox.Text = "";
             numbers.Clear();
@@ -311,7 +329,7 @@ namespace Calculator
         //소수점 버튼
         private void dot_Click(object sender, EventArgs e)
         {
-            //계산이 완료된후 숫자를 누르면 초기화 되게함
+                        //계산이 완료된후 숫자를 누르면 초기화 되게함
             if (calculationCompleted)
             {
                 formulaBox.Text = "";
