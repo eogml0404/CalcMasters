@@ -30,6 +30,11 @@ namespace Calculator
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint10 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 0D);
+            System.Windows.Forms.DataVisualization.Charting.Title title10 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.inputBox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -54,6 +59,15 @@ namespace Calculator
             this.his = new System.Windows.Forms.Button();
             this.formulaBox = new System.Windows.Forms.TextBox();
             this.dot = new System.Windows.Forms.Button();
+            this.HCBtn = new System.Windows.Forms.Button();
+            this.historyBox = new System.Windows.Forms.ListBox();
+            this.closeBtn = new System.Windows.Forms.Button();
+            this.everyBtn = new System.Windows.Forms.Button();
+            this.stick_chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.linkBox = new System.Windows.Forms.TextBox();
+            this.callBtn = new System.Windows.Forms.Button();
+            this.printGraph = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.stick_chart)).BeginInit();
             this.SuspendLayout();
             // 
             // inputBox
@@ -345,11 +359,118 @@ namespace Calculator
             this.dot.UseVisualStyleBackColor = true;
             this.dot.Click += new System.EventHandler(this.dot_Click);
             // 
+            // HCBtn
+            // 
+            this.HCBtn.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HCBtn.Location = new System.Drawing.Point(79, 355);
+            this.HCBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.HCBtn.Name = "HCBtn";
+            this.HCBtn.Size = new System.Drawing.Size(155, 39);
+            this.HCBtn.TabIndex = 22;
+            this.HCBtn.Text = "HC";
+            this.HCBtn.UseVisualStyleBackColor = true;
+            this.HCBtn.Click += new System.EventHandler(this.HCBtn_Click);
+            // 
+            // historyBox
+            // 
+            this.historyBox.Font = new System.Drawing.Font("굴림", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.historyBox.FormattingEnabled = true;
+            this.historyBox.HorizontalScrollbar = true;
+            this.historyBox.ItemHeight = 28;
+            this.historyBox.Items.AddRange(new object[] {
+            "-계산 내역-"});
+            this.historyBox.Location = new System.Drawing.Point(115, 159);
+            this.historyBox.Name = "historyBox";
+            this.historyBox.Size = new System.Drawing.Size(585, 704);
+            this.historyBox.TabIndex = 23;
+            // 
+            // closeBtn
+            // 
+            this.closeBtn.BackColor = System.Drawing.Color.Red;
+            this.closeBtn.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.closeBtn.ForeColor = System.Drawing.Color.White;
+            this.closeBtn.Location = new System.Drawing.Point(645, 170);
+            this.closeBtn.Name = "closeBtn";
+            this.closeBtn.Size = new System.Drawing.Size(44, 44);
+            this.closeBtn.TabIndex = 24;
+            this.closeBtn.Text = "X";
+            this.closeBtn.UseVisualStyleBackColor = false;
+            this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
+            // 
+            // everyBtn
+            // 
+            this.everyBtn.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.everyBtn.Location = new System.Drawing.Point(261, 355);
+            this.everyBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.everyBtn.Name = "everyBtn";
+            this.everyBtn.Size = new System.Drawing.Size(207, 39);
+            this.everyBtn.TabIndex = 25;
+            this.everyBtn.Text = "every history";
+            this.everyBtn.UseVisualStyleBackColor = true;
+            this.everyBtn.Click += new System.EventHandler(this.everyBtn_Click);
+            // 
+            // stick_chart
+            // 
+            chartArea10.Name = "ChartArea1";
+            this.stick_chart.ChartAreas.Add(chartArea10);
+            legend10.Name = "Legend1";
+            this.stick_chart.Legends.Add(legend10);
+            this.stick_chart.Location = new System.Drawing.Point(97, 296);
+            this.stick_chart.Name = "stick_chart";
+            series10.ChartArea = "ChartArea1";
+            series10.Legend = "Legend1";
+            series10.Name = "계산 결과";
+            dataPoint10.IsEmpty = true;
+            series10.Points.Add(dataPoint10);
+            this.stick_chart.Series.Add(series10);
+            this.stick_chart.Size = new System.Drawing.Size(638, 442);
+            this.stick_chart.TabIndex = 26;
+            this.stick_chart.Text = "chart1";
+            title10.Name = "계산 내역";
+            this.stick_chart.Titles.Add(title10);
+            this.stick_chart.Visible = false;
+            // 
+            // linkBox
+            // 
+            this.linkBox.Location = new System.Drawing.Point(261, 803);
+            this.linkBox.Name = "linkBox";
+            this.linkBox.ReadOnly = true;
+            this.linkBox.Size = new System.Drawing.Size(299, 28);
+            this.linkBox.TabIndex = 28;
+            // 
+            // callBtn
+            // 
+            this.callBtn.Location = new System.Drawing.Point(566, 802);
+            this.callBtn.Name = "callBtn";
+            this.callBtn.Size = new System.Drawing.Size(109, 29);
+            this.callBtn.TabIndex = 29;
+            this.callBtn.Text = "불러오기";
+            this.callBtn.UseVisualStyleBackColor = true;
+            this.callBtn.Click += new System.EventHandler(this.callBtn_Click);
+            // 
+            // printGraph
+            // 
+            this.printGraph.Image = global::Calculator.Properties.Resources.스크린샷_2024_07_11_133538;
+            this.printGraph.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.printGraph.Location = new System.Drawing.Point(706, 142);
+            this.printGraph.Name = "printGraph";
+            this.printGraph.Size = new System.Drawing.Size(134, 136);
+            this.printGraph.TabIndex = 27;
+            this.printGraph.UseVisualStyleBackColor = true;
+            this.printGraph.Click += new System.EventHandler(this.graph_Click);
+            // 
             // Calcul
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(852, 956);
+            this.Controls.Add(this.callBtn);
+            this.Controls.Add(this.linkBox);
+            this.Controls.Add(this.printGraph);
+            this.Controls.Add(this.stick_chart);
+            this.Controls.Add(this.closeBtn);
+            this.Controls.Add(this.historyBox);
+            this.Controls.Add(this.HCBtn);
             this.Controls.Add(this.dot);
             this.Controls.Add(this.formulaBox);
             this.Controls.Add(this.his);
@@ -374,9 +495,11 @@ namespace Calculator
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.inputBox);
+            this.Controls.Add(this.everyBtn);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Calcul";
             this.Text = "계산기";
+            ((System.ComponentModel.ISupportInitialize)(this.stick_chart)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -408,6 +531,14 @@ namespace Calculator
         private System.Windows.Forms.Button button0;
         private System.Windows.Forms.Button remainder;
         private System.Windows.Forms.Button dot;
+        private System.Windows.Forms.Button HCBtn;
+        private System.Windows.Forms.ListBox historyBox;
+        private System.Windows.Forms.Button closeBtn;
+        private System.Windows.Forms.Button everyBtn;
+        private System.Windows.Forms.DataVisualization.Charting.Chart stick_chart;
+        private System.Windows.Forms.TextBox linkBox;
+        private System.Windows.Forms.Button callBtn;
+        private System.Windows.Forms.Button printGraph;
     }
 }
 
