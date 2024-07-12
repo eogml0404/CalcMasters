@@ -59,6 +59,15 @@ namespace Calculator
             this.his = new System.Windows.Forms.Button();
             this.formulaBox = new System.Windows.Forms.TextBox();
             this.dot = new System.Windows.Forms.Button();
+
+            this.binaryRadioButton = new System.Windows.Forms.RadioButton();
+            this.decimalRadioButton = new System.Windows.Forms.RadioButton();
+            this.hexRadioButton = new System.Windows.Forms.RadioButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateDifferenceBox = new System.Windows.Forms.TextBox();
+            this.groupBox1.SuspendLayout();
+
             this.HCBtn = new System.Windows.Forms.Button();
             this.historyBox = new System.Windows.Forms.ListBox();
             this.closeBtn = new System.Windows.Forms.Button();
@@ -68,6 +77,7 @@ namespace Calculator
             this.callBtn = new System.Windows.Forms.Button();
             this.printGraph = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.stick_chart)).BeginInit();
+
             this.SuspendLayout();
             // 
             // inputBox
@@ -79,6 +89,7 @@ namespace Calculator
             this.inputBox.Margin = new System.Windows.Forms.Padding(2);
             this.inputBox.Multiline = true;
             this.inputBox.Name = "inputBox";
+            this.inputBox.Size = new System.Drawing.Size(560, 88);
             this.inputBox.ReadOnly = true;
             this.inputBox.Size = new System.Drawing.Size(699, 105);
             this.inputBox.TabIndex = 0;
@@ -94,7 +105,7 @@ namespace Calculator
             this.button1.Location = new System.Drawing.Point(79, 408);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 89);
+            this.button1.Size = new System.Drawing.Size(75, 74);
             this.button1.TabIndex = 1;
             this.button1.Text = "1";
             this.button1.UseVisualStyleBackColor = true;
@@ -110,7 +121,7 @@ namespace Calculator
             this.button2.Location = new System.Drawing.Point(224, 408);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(94, 89);
+            this.button2.Size = new System.Drawing.Size(75, 74);
             this.button2.TabIndex = 2;
             this.button2.Text = "2";
             this.button2.UseVisualStyleBackColor = true;
@@ -126,7 +137,7 @@ namespace Calculator
             this.button3.Location = new System.Drawing.Point(374, 408);
             this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(94, 89);
+            this.button3.Size = new System.Drawing.Size(75, 74);
             this.button3.TabIndex = 3;
             this.button3.Text = "3";
             this.button3.UseVisualStyleBackColor = true;
@@ -142,7 +153,7 @@ namespace Calculator
             this.button4.Location = new System.Drawing.Point(79, 542);
             this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(94, 89);
+            this.button4.Size = new System.Drawing.Size(75, 74);
             this.button4.TabIndex = 4;
             this.button4.Text = "4";
             this.button4.UseVisualStyleBackColor = true;
@@ -158,7 +169,7 @@ namespace Calculator
             this.button5.Location = new System.Drawing.Point(224, 542);
             this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(94, 89);
+            this.button5.Size = new System.Drawing.Size(75, 74);
             this.button5.TabIndex = 5;
             this.button5.Text = "5";
             this.button5.UseVisualStyleBackColor = true;
@@ -174,7 +185,7 @@ namespace Calculator
             this.button6.Location = new System.Drawing.Point(374, 542);
             this.button6.Margin = new System.Windows.Forms.Padding(2);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(94, 89);
+            this.button6.Size = new System.Drawing.Size(75, 74);
             this.button6.TabIndex = 6;
             this.button6.Text = "6";
             this.button6.UseVisualStyleBackColor = true;
@@ -190,7 +201,7 @@ namespace Calculator
             this.button7.Location = new System.Drawing.Point(79, 686);
             this.button7.Margin = new System.Windows.Forms.Padding(2);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(94, 89);
+            this.button7.Size = new System.Drawing.Size(75, 74);
             this.button7.TabIndex = 7;
             this.button7.Text = "7";
             this.button7.UseVisualStyleBackColor = true;
@@ -206,7 +217,7 @@ namespace Calculator
             this.button8.Location = new System.Drawing.Point(224, 686);
             this.button8.Margin = new System.Windows.Forms.Padding(2);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(94, 89);
+            this.button8.Size = new System.Drawing.Size(75, 74);
             this.button8.TabIndex = 8;
             this.button8.Text = "8";
             this.button8.UseVisualStyleBackColor = true;
@@ -222,7 +233,7 @@ namespace Calculator
             this.button9.Location = new System.Drawing.Point(374, 686);
             this.button9.Margin = new System.Windows.Forms.Padding(2);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(94, 89);
+            this.button9.Size = new System.Drawing.Size(75, 74);
             this.button9.TabIndex = 9;
             this.button9.Text = "9";
             this.button9.UseVisualStyleBackColor = true;
@@ -238,7 +249,7 @@ namespace Calculator
             this.plus.Location = new System.Drawing.Point(539, 686);
             this.plus.Margin = new System.Windows.Forms.Padding(2);
             this.plus.Name = "plus";
-            this.plus.Size = new System.Drawing.Size(94, 89);
+            this.plus.Size = new System.Drawing.Size(75, 74);
             this.plus.TabIndex = 10;
             this.plus.Text = "+";
             this.plus.UseVisualStyleBackColor = true;
@@ -254,7 +265,7 @@ namespace Calculator
             this.minus.Location = new System.Drawing.Point(539, 542);
             this.minus.Margin = new System.Windows.Forms.Padding(2);
             this.minus.Name = "minus";
-            this.minus.Size = new System.Drawing.Size(94, 89);
+            this.minus.Size = new System.Drawing.Size(75, 74);
             this.minus.TabIndex = 11;
             this.minus.Text = "-";
             this.minus.UseVisualStyleBackColor = true;
@@ -265,10 +276,10 @@ namespace Calculator
             this.execute.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(190)))), ((int)(((byte)(152)))));
             this.execute.Font = new System.Drawing.Font("굴림", 30F, System.Drawing.FontStyle.Bold);
             this.execute.ForeColor = System.Drawing.Color.White;
-            this.execute.Location = new System.Drawing.Point(539, 816);
+            this.execute.Location = new System.Drawing.Point(432, 650);
             this.execute.Margin = new System.Windows.Forms.Padding(2);
             this.execute.Name = "execute";
-            this.execute.Size = new System.Drawing.Size(239, 89);
+            this.execute.Size = new System.Drawing.Size(191, 74);
             this.execute.TabIndex = 12;
             this.execute.Text = "=";
             this.execute.UseVisualStyleBackColor = false;
@@ -284,7 +295,7 @@ namespace Calculator
             this.resultBox.Multiline = true;
             this.resultBox.Name = "resultBox";
             this.resultBox.ReadOnly = true;
-            this.resultBox.Size = new System.Drawing.Size(239, 28);
+            this.resultBox.Size = new System.Drawing.Size(192, 24);
             this.resultBox.TabIndex = 13;
             this.resultBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -298,7 +309,7 @@ namespace Calculator
             this.ACBtn.Location = new System.Drawing.Point(79, 249);
             this.ACBtn.Margin = new System.Windows.Forms.Padding(2);
             this.ACBtn.Name = "ACBtn";
-            this.ACBtn.Size = new System.Drawing.Size(155, 64);
+            this.ACBtn.Size = new System.Drawing.Size(124, 53);
             this.ACBtn.TabIndex = 14;
             this.ACBtn.Text = "AC";
             this.ACBtn.UseVisualStyleBackColor = true;
@@ -314,7 +325,7 @@ namespace Calculator
             this.erase.Location = new System.Drawing.Point(539, 408);
             this.erase.Margin = new System.Windows.Forms.Padding(2);
             this.erase.Name = "erase";
-            this.erase.Size = new System.Drawing.Size(94, 89);
+            this.erase.Size = new System.Drawing.Size(75, 74);
             this.erase.TabIndex = 15;
             this.erase.Text = "<<";
             this.erase.UseVisualStyleBackColor = true;
@@ -330,7 +341,7 @@ namespace Calculator
             this.button10.Location = new System.Drawing.Point(684, 408);
             this.button10.Margin = new System.Windows.Forms.Padding(2);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(94, 89);
+            this.button10.Size = new System.Drawing.Size(75, 74);
             this.button10.TabIndex = 16;
             this.button10.Text = "x";
             this.button10.UseVisualStyleBackColor = true;
@@ -346,7 +357,7 @@ namespace Calculator
             this.div.Location = new System.Drawing.Point(684, 542);
             this.div.Margin = new System.Windows.Forms.Padding(2);
             this.div.Name = "div";
-            this.div.Size = new System.Drawing.Size(94, 89);
+            this.div.Size = new System.Drawing.Size(75, 74);
             this.div.TabIndex = 17;
             this.div.Text = "/";
             this.div.UseVisualStyleBackColor = true;
@@ -360,8 +371,10 @@ namespace Calculator
             this.reverse.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.reverse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(190)))), ((int)(((byte)(152)))));
             this.reverse.Location = new System.Drawing.Point(79, 816);
+            this.reverse.Location = new System.Drawing.Point(63, 650);
+            this.reverse.Margin = new System.Windows.Forms.Padding(2);
             this.reverse.Name = "reverse";
-            this.reverse.Size = new System.Drawing.Size(94, 89);
+            this.reverse.Size = new System.Drawing.Size(75, 74);
             this.reverse.TabIndex = 18;
             this.reverse.Text = "+/-";
             this.reverse.UseVisualStyleBackColor = true;
@@ -377,7 +390,7 @@ namespace Calculator
             this.button0.Location = new System.Drawing.Point(224, 816);
             this.button0.Margin = new System.Windows.Forms.Padding(4);
             this.button0.Name = "button0";
-            this.button0.Size = new System.Drawing.Size(94, 89);
+            this.button0.Size = new System.Drawing.Size(75, 74);
             this.button0.TabIndex = 19;
             this.button0.Text = "0";
             this.button0.UseVisualStyleBackColor = true;
@@ -393,7 +406,7 @@ namespace Calculator
             this.remainder.Location = new System.Drawing.Point(684, 686);
             this.remainder.Margin = new System.Windows.Forms.Padding(4);
             this.remainder.Name = "remainder";
-            this.remainder.Size = new System.Drawing.Size(94, 89);
+            this.remainder.Size = new System.Drawing.Size(75, 74);
             this.remainder.TabIndex = 20;
             this.remainder.Text = "%";
             this.remainder.UseVisualStyleBackColor = true;
@@ -409,7 +422,7 @@ namespace Calculator
             this.his.Location = new System.Drawing.Point(261, 249);
             this.his.Margin = new System.Windows.Forms.Padding(2);
             this.his.Name = "his";
-            this.his.Size = new System.Drawing.Size(207, 64);
+            this.his.Size = new System.Drawing.Size(166, 53);
             this.his.TabIndex = 19;
             this.his.Text = "history";
             this.his.UseVisualStyleBackColor = true;
@@ -424,7 +437,7 @@ namespace Calculator
             this.formulaBox.Margin = new System.Windows.Forms.Padding(4);
             this.formulaBox.Name = "formulaBox";
             this.formulaBox.ReadOnly = true;
-            this.formulaBox.Size = new System.Drawing.Size(699, 44);
+            this.formulaBox.Size = new System.Drawing.Size(560, 38);
             this.formulaBox.TabIndex = 20;
             this.formulaBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -437,12 +450,76 @@ namespace Calculator
             this.dot.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(190)))), ((int)(((byte)(152)))));
             this.dot.Location = new System.Drawing.Point(374, 816);
             this.dot.Name = "dot";
-            this.dot.Size = new System.Drawing.Size(94, 89);
+            this.dot.Size = new System.Drawing.Size(75, 74);
             this.dot.TabIndex = 21;
             this.dot.Text = ".";
             this.dot.UseVisualStyleBackColor = true;
             this.dot.Click += new System.EventHandler(this.dot_Click);
             // 
+
+            // binaryRadioButton
+            // 
+            this.binaryRadioButton.AutoSize = true;
+            this.binaryRadioButton.Location = new System.Drawing.Point(13, 23);
+            this.binaryRadioButton.Name = "binaryRadioButton";
+            this.binaryRadioButton.Size = new System.Drawing.Size(66, 19);
+            this.binaryRadioButton.TabIndex = 22;
+            this.binaryRadioButton.TabStop = true;
+            this.binaryRadioButton.Text = "2진수";
+            this.binaryRadioButton.UseVisualStyleBackColor = true;
+            this.binaryRadioButton.CheckedChanged += new System.EventHandler(this.binaryRadioButton_CheckedChanged);
+            // 
+            // decimalRadioButton
+            // 
+            this.decimalRadioButton.AutoSize = true;
+            this.decimalRadioButton.Location = new System.Drawing.Point(85, 23);
+            this.decimalRadioButton.Name = "decimalRadioButton";
+            this.decimalRadioButton.Size = new System.Drawing.Size(74, 19);
+            this.decimalRadioButton.TabIndex = 23;
+            this.decimalRadioButton.TabStop = true;
+            this.decimalRadioButton.Text = "10진수";
+            this.decimalRadioButton.UseVisualStyleBackColor = true;
+            this.decimalRadioButton.CheckedChanged += new System.EventHandler(this.decimalRadioButton_CheckedChanged);
+            // 
+            // hexRadioButton
+            // 
+            this.hexRadioButton.AutoSize = true;
+            this.hexRadioButton.Location = new System.Drawing.Point(159, 23);
+            this.hexRadioButton.Name = "hexRadioButton";
+            this.hexRadioButton.Size = new System.Drawing.Size(74, 19);
+            this.hexRadioButton.TabIndex = 24;
+            this.hexRadioButton.TabStop = true;
+            this.hexRadioButton.Text = "16진수";
+            this.hexRadioButton.UseVisualStyleBackColor = true;
+            this.hexRadioButton.CheckedChanged += new System.EventHandler(this.hexRadioButton_CheckedChanged);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.binaryRadioButton);
+            this.groupBox1.Controls.Add(this.hexRadioButton);
+            this.groupBox1.Controls.Add(this.decimalRadioButton);
+            this.groupBox1.Location = new System.Drawing.Point(403, 287);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(247, 48);
+            this.groupBox1.TabIndex = 25;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "진수변환";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(63, 745);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(190, 25);
+            this.dateTimePicker1.TabIndex = 26;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            // 
+            // dateDifferenceBox
+            // 
+            this.dateDifferenceBox.Location = new System.Drawing.Point(300, 745);
+            this.dateDifferenceBox.Name = "dateDifferenceBox";
+            this.dateDifferenceBox.Size = new System.Drawing.Size(305, 25);
+            this.dateDifferenceBox.TabIndex = 27;
+
             // HCBtn
             // 
             this.HCBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(190)))), ((int)(((byte)(152)))));
@@ -559,11 +636,19 @@ namespace Calculator
             this.printGraph.Text = "0.";
             this.printGraph.UseVisualStyleBackColor = true;
             this.printGraph.Click += new System.EventHandler(this.graph_Click);
+
             // 
             // Calcul
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+
+            this.ClientSize = new System.Drawing.Size(682, 797);
+            this.Controls.Add(this.dateDifferenceBox);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.groupBox1);
+
+            this.ClientSize = new System.Drawing.Size(852, 956);
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1130, 956);
             this.Controls.Add(this.callBtn);
@@ -573,6 +658,7 @@ namespace Calculator
             this.Controls.Add(this.printGraph);
             this.Controls.Add(this.stick_chart);
             this.Controls.Add(this.HCBtn);
+
             this.Controls.Add(this.dot);
             this.Controls.Add(this.formulaBox);
             this.Controls.Add(this.his);
@@ -601,7 +687,12 @@ namespace Calculator
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Calcul";
             this.Text = "계산기";
+
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+
             ((System.ComponentModel.ISupportInitialize)(this.stick_chart)).EndInit();
+
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -633,6 +724,14 @@ namespace Calculator
         private System.Windows.Forms.Button button0;
         private System.Windows.Forms.Button remainder;
         private System.Windows.Forms.Button dot;
+
+        private System.Windows.Forms.RadioButton binaryRadioButton;
+        private System.Windows.Forms.RadioButton decimalRadioButton;
+        private System.Windows.Forms.RadioButton hexRadioButton;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox dateDifferenceBox;
+
         private System.Windows.Forms.Button HCBtn;
         private System.Windows.Forms.ListBox historyBox;
         private System.Windows.Forms.Button closeBtn;
@@ -641,6 +740,7 @@ namespace Calculator
         private System.Windows.Forms.TextBox linkBox;
         private System.Windows.Forms.Button callBtn;
         private System.Windows.Forms.Button printGraph;
+
     }
 }
 
