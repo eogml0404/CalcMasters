@@ -69,5 +69,25 @@ namespace Calculator.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap 스크린샷_2024_07_12_102833 {
+            get {
+                object obj = ResourceManager.GetObject("스크린샷 2024-07-12 102833", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap 스크린샷_2024_07_12_103019 {
+            get {
+                object obj = ResourceManager.GetObject("스크린샷 2024-07-12 103019", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

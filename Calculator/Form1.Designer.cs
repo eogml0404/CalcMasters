@@ -30,11 +30,11 @@ namespace Calculator
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint10 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 0D);
-            System.Windows.Forms.DataVisualization.Charting.Title title10 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint1 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 0D);
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.inputBox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -72,7 +72,9 @@ namespace Calculator
             // 
             // inputBox
             // 
+            this.inputBox.BackColor = System.Drawing.Color.White;
             this.inputBox.Font = new System.Drawing.Font("굴림", 14F);
+            this.inputBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(132)))), ((int)(((byte)(138)))));
             this.inputBox.Location = new System.Drawing.Point(79, 118);
             this.inputBox.Margin = new System.Windows.Forms.Padding(2);
             this.inputBox.Multiline = true;
@@ -84,7 +86,11 @@ namespace Calculator
             // 
             // button1
             // 
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(190)))), ((int)(((byte)(152)))));
+            this.button1.FlatAppearance.BorderSize = 3;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(190)))), ((int)(((byte)(152)))));
             this.button1.Location = new System.Drawing.Point(79, 408);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
@@ -96,7 +102,11 @@ namespace Calculator
             // 
             // button2
             // 
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(190)))), ((int)(((byte)(152)))));
+            this.button2.FlatAppearance.BorderSize = 3;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(190)))), ((int)(((byte)(152)))));
             this.button2.Location = new System.Drawing.Point(224, 408);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
@@ -108,7 +118,11 @@ namespace Calculator
             // 
             // button3
             // 
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(190)))), ((int)(((byte)(152)))));
+            this.button3.FlatAppearance.BorderSize = 3;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(190)))), ((int)(((byte)(152)))));
             this.button3.Location = new System.Drawing.Point(374, 408);
             this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
@@ -120,7 +134,11 @@ namespace Calculator
             // 
             // button4
             // 
+            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(190)))), ((int)(((byte)(152)))));
+            this.button4.FlatAppearance.BorderSize = 3;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(190)))), ((int)(((byte)(152)))));
             this.button4.Location = new System.Drawing.Point(79, 542);
             this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
@@ -132,7 +150,11 @@ namespace Calculator
             // 
             // button5
             // 
+            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(190)))), ((int)(((byte)(152)))));
+            this.button5.FlatAppearance.BorderSize = 3;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(190)))), ((int)(((byte)(152)))));
             this.button5.Location = new System.Drawing.Point(224, 542);
             this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
@@ -144,7 +166,11 @@ namespace Calculator
             // 
             // button6
             // 
+            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(190)))), ((int)(((byte)(152)))));
+            this.button6.FlatAppearance.BorderSize = 3;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(190)))), ((int)(((byte)(152)))));
             this.button6.Location = new System.Drawing.Point(374, 542);
             this.button6.Margin = new System.Windows.Forms.Padding(2);
             this.button6.Name = "button6";
@@ -156,7 +182,11 @@ namespace Calculator
             // 
             // button7
             // 
+            this.button7.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(190)))), ((int)(((byte)(152)))));
+            this.button7.FlatAppearance.BorderSize = 3;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(190)))), ((int)(((byte)(152)))));
             this.button7.Location = new System.Drawing.Point(79, 686);
             this.button7.Margin = new System.Windows.Forms.Padding(2);
             this.button7.Name = "button7";
@@ -168,7 +198,11 @@ namespace Calculator
             // 
             // button8
             // 
+            this.button8.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(190)))), ((int)(((byte)(152)))));
+            this.button8.FlatAppearance.BorderSize = 3;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(190)))), ((int)(((byte)(152)))));
             this.button8.Location = new System.Drawing.Point(224, 686);
             this.button8.Margin = new System.Windows.Forms.Padding(2);
             this.button8.Name = "button8";
@@ -180,7 +214,11 @@ namespace Calculator
             // 
             // button9
             // 
+            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(190)))), ((int)(((byte)(152)))));
+            this.button9.FlatAppearance.BorderSize = 3;
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(190)))), ((int)(((byte)(152)))));
             this.button9.Location = new System.Drawing.Point(374, 686);
             this.button9.Margin = new System.Windows.Forms.Padding(2);
             this.button9.Name = "button9";
@@ -192,7 +230,11 @@ namespace Calculator
             // 
             // plus
             // 
+            this.plus.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(190)))), ((int)(((byte)(152)))));
+            this.plus.FlatAppearance.BorderSize = 3;
+            this.plus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.plus.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.plus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(190)))), ((int)(((byte)(152)))));
             this.plus.Location = new System.Drawing.Point(539, 686);
             this.plus.Margin = new System.Windows.Forms.Padding(2);
             this.plus.Name = "plus";
@@ -204,7 +246,11 @@ namespace Calculator
             // 
             // minus
             // 
+            this.minus.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(190)))), ((int)(((byte)(152)))));
+            this.minus.FlatAppearance.BorderSize = 3;
+            this.minus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.minus.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.minus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(190)))), ((int)(((byte)(152)))));
             this.minus.Location = new System.Drawing.Point(539, 542);
             this.minus.Margin = new System.Windows.Forms.Padding(2);
             this.minus.Name = "minus";
@@ -216,7 +262,7 @@ namespace Calculator
             // 
             // execute
             // 
-            this.execute.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.execute.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(190)))), ((int)(((byte)(152)))));
             this.execute.Font = new System.Drawing.Font("굴림", 30F, System.Drawing.FontStyle.Bold);
             this.execute.ForeColor = System.Drawing.Color.White;
             this.execute.Location = new System.Drawing.Point(539, 816);
@@ -232,8 +278,8 @@ namespace Calculator
             // 
             this.resultBox.BackColor = System.Drawing.Color.White;
             this.resultBox.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold);
-            this.resultBox.ForeColor = System.Drawing.Color.Red;
-            this.resultBox.Location = new System.Drawing.Point(539, 296);
+            this.resultBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(79)))), ((int)(((byte)(76)))));
+            this.resultBox.Location = new System.Drawing.Point(539, 305);
             this.resultBox.Margin = new System.Windows.Forms.Padding(2);
             this.resultBox.Multiline = true;
             this.resultBox.Name = "resultBox";
@@ -244,8 +290,12 @@ namespace Calculator
             // 
             // ACBtn
             // 
+            this.ACBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(190)))), ((int)(((byte)(152)))));
+            this.ACBtn.FlatAppearance.BorderSize = 3;
+            this.ACBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ACBtn.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ACBtn.Location = new System.Drawing.Point(79, 275);
+            this.ACBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(132)))), ((int)(((byte)(138)))));
+            this.ACBtn.Location = new System.Drawing.Point(79, 249);
             this.ACBtn.Margin = new System.Windows.Forms.Padding(2);
             this.ACBtn.Name = "ACBtn";
             this.ACBtn.Size = new System.Drawing.Size(155, 64);
@@ -256,7 +306,11 @@ namespace Calculator
             // 
             // erase
             // 
+            this.erase.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(190)))), ((int)(((byte)(152)))));
+            this.erase.FlatAppearance.BorderSize = 3;
+            this.erase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.erase.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.erase.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(190)))), ((int)(((byte)(152)))));
             this.erase.Location = new System.Drawing.Point(539, 408);
             this.erase.Margin = new System.Windows.Forms.Padding(2);
             this.erase.Name = "erase";
@@ -268,7 +322,11 @@ namespace Calculator
             // 
             // button10
             // 
+            this.button10.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(190)))), ((int)(((byte)(152)))));
+            this.button10.FlatAppearance.BorderSize = 3;
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button10.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(190)))), ((int)(((byte)(152)))));
             this.button10.Location = new System.Drawing.Point(684, 408);
             this.button10.Margin = new System.Windows.Forms.Padding(2);
             this.button10.Name = "button10";
@@ -280,7 +338,11 @@ namespace Calculator
             // 
             // div
             // 
+            this.div.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(190)))), ((int)(((byte)(152)))));
+            this.div.FlatAppearance.BorderSize = 3;
+            this.div.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.div.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.div.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(190)))), ((int)(((byte)(152)))));
             this.div.Location = new System.Drawing.Point(684, 542);
             this.div.Margin = new System.Windows.Forms.Padding(2);
             this.div.Name = "div";
@@ -292,7 +354,11 @@ namespace Calculator
             // 
             // reverse
             // 
+            this.reverse.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(190)))), ((int)(((byte)(152)))));
+            this.reverse.FlatAppearance.BorderSize = 3;
+            this.reverse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.reverse.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.reverse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(190)))), ((int)(((byte)(152)))));
             this.reverse.Location = new System.Drawing.Point(79, 816);
             this.reverse.Name = "reverse";
             this.reverse.Size = new System.Drawing.Size(94, 89);
@@ -303,7 +369,11 @@ namespace Calculator
             // 
             // button0
             // 
+            this.button0.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(190)))), ((int)(((byte)(152)))));
+            this.button0.FlatAppearance.BorderSize = 3;
+            this.button0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button0.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button0.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(190)))), ((int)(((byte)(152)))));
             this.button0.Location = new System.Drawing.Point(224, 816);
             this.button0.Margin = new System.Windows.Forms.Padding(4);
             this.button0.Name = "button0";
@@ -315,7 +385,11 @@ namespace Calculator
             // 
             // remainder
             // 
+            this.remainder.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(190)))), ((int)(((byte)(152)))));
+            this.remainder.FlatAppearance.BorderSize = 3;
+            this.remainder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.remainder.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.remainder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(190)))), ((int)(((byte)(152)))));
             this.remainder.Location = new System.Drawing.Point(684, 686);
             this.remainder.Margin = new System.Windows.Forms.Padding(4);
             this.remainder.Name = "remainder";
@@ -327,8 +401,12 @@ namespace Calculator
             // 
             // his
             // 
+            this.his.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(190)))), ((int)(((byte)(152)))));
+            this.his.FlatAppearance.BorderSize = 3;
+            this.his.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.his.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.his.Location = new System.Drawing.Point(261, 275);
+            this.his.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(132)))), ((int)(((byte)(138)))));
+            this.his.Location = new System.Drawing.Point(261, 249);
             this.his.Margin = new System.Windows.Forms.Padding(2);
             this.his.Name = "his";
             this.his.Size = new System.Drawing.Size(207, 64);
@@ -339,7 +417,9 @@ namespace Calculator
             // 
             // formulaBox
             // 
+            this.formulaBox.BackColor = System.Drawing.Color.White;
             this.formulaBox.Font = new System.Drawing.Font("굴림", 16F);
+            this.formulaBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(132)))), ((int)(((byte)(138)))));
             this.formulaBox.Location = new System.Drawing.Point(79, 35);
             this.formulaBox.Margin = new System.Windows.Forms.Padding(4);
             this.formulaBox.Name = "formulaBox";
@@ -350,7 +430,11 @@ namespace Calculator
             // 
             // dot
             // 
+            this.dot.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(190)))), ((int)(((byte)(152)))));
+            this.dot.FlatAppearance.BorderSize = 3;
+            this.dot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.dot.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Bold);
+            this.dot.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(190)))), ((int)(((byte)(152)))));
             this.dot.Location = new System.Drawing.Point(374, 816);
             this.dot.Name = "dot";
             this.dot.Size = new System.Drawing.Size(94, 89);
@@ -361,11 +445,15 @@ namespace Calculator
             // 
             // HCBtn
             // 
+            this.HCBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(190)))), ((int)(((byte)(152)))));
+            this.HCBtn.FlatAppearance.BorderSize = 3;
+            this.HCBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.HCBtn.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HCBtn.Location = new System.Drawing.Point(79, 355);
+            this.HCBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(132)))), ((int)(((byte)(138)))));
+            this.HCBtn.Location = new System.Drawing.Point(79, 328);
             this.HCBtn.Margin = new System.Windows.Forms.Padding(2);
             this.HCBtn.Name = "HCBtn";
-            this.HCBtn.Size = new System.Drawing.Size(155, 39);
+            this.HCBtn.Size = new System.Drawing.Size(155, 63);
             this.HCBtn.TabIndex = 22;
             this.HCBtn.Text = "HC";
             this.HCBtn.UseVisualStyleBackColor = true;
@@ -373,23 +461,25 @@ namespace Calculator
             // 
             // historyBox
             // 
-            this.historyBox.Font = new System.Drawing.Font("굴림", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.historyBox.BackColor = System.Drawing.SystemColors.Info;
+            this.historyBox.Font = new System.Drawing.Font("맑은 고딕", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.historyBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(190)))), ((int)(((byte)(152)))));
             this.historyBox.FormattingEnabled = true;
             this.historyBox.HorizontalScrollbar = true;
-            this.historyBox.ItemHeight = 28;
+            this.historyBox.ItemHeight = 38;
             this.historyBox.Items.AddRange(new object[] {
             "-계산 내역-"});
-            this.historyBox.Location = new System.Drawing.Point(115, 159);
+            this.historyBox.Location = new System.Drawing.Point(146, 184);
             this.historyBox.Name = "historyBox";
-            this.historyBox.Size = new System.Drawing.Size(585, 704);
+            this.historyBox.Size = new System.Drawing.Size(583, 688);
             this.historyBox.TabIndex = 23;
             // 
             // closeBtn
             // 
-            this.closeBtn.BackColor = System.Drawing.Color.Red;
+            this.closeBtn.BackColor = System.Drawing.Color.White;
             this.closeBtn.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.closeBtn.ForeColor = System.Drawing.Color.White;
-            this.closeBtn.Location = new System.Drawing.Point(645, 170);
+            this.closeBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(190)))), ((int)(((byte)(152)))));
+            this.closeBtn.Location = new System.Drawing.Point(674, 200);
             this.closeBtn.Name = "closeBtn";
             this.closeBtn.Size = new System.Drawing.Size(44, 44);
             this.closeBtn.TabIndex = 24;
@@ -399,11 +489,15 @@ namespace Calculator
             // 
             // everyBtn
             // 
+            this.everyBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(190)))), ((int)(((byte)(152)))));
+            this.everyBtn.FlatAppearance.BorderSize = 3;
+            this.everyBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.everyBtn.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.everyBtn.Location = new System.Drawing.Point(261, 355);
+            this.everyBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(132)))), ((int)(((byte)(138)))));
+            this.everyBtn.Location = new System.Drawing.Point(261, 328);
             this.everyBtn.Margin = new System.Windows.Forms.Padding(2);
             this.everyBtn.Name = "everyBtn";
-            this.everyBtn.Size = new System.Drawing.Size(207, 39);
+            this.everyBtn.Size = new System.Drawing.Size(207, 63);
             this.everyBtn.TabIndex = 25;
             this.everyBtn.Text = "every history";
             this.everyBtn.UseVisualStyleBackColor = true;
@@ -411,28 +505,32 @@ namespace Calculator
             // 
             // stick_chart
             // 
-            chartArea10.Name = "ChartArea1";
-            this.stick_chart.ChartAreas.Add(chartArea10);
-            legend10.Name = "Legend1";
-            this.stick_chart.Legends.Add(legend10);
-            this.stick_chart.Location = new System.Drawing.Point(97, 296);
+            this.stick_chart.BorderSkin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(114)))), ((int)(((byte)(114)))));
+            this.stick_chart.BorderSkin.SkinStyle = System.Windows.Forms.DataVisualization.Charting.BorderSkinStyle.FrameThin3;
+            chartArea1.Name = "ChartArea1";
+            this.stick_chart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.stick_chart.Legends.Add(legend1);
+            this.stick_chart.Location = new System.Drawing.Point(125, 328);
             this.stick_chart.Name = "stick_chart";
-            series10.ChartArea = "ChartArea1";
-            series10.Legend = "Legend1";
-            series10.Name = "계산 결과";
-            dataPoint10.IsEmpty = true;
-            series10.Points.Add(dataPoint10);
-            this.stick_chart.Series.Add(series10);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "계산 결과";
+            dataPoint1.IsEmpty = true;
+            series1.Points.Add(dataPoint1);
+            this.stick_chart.Series.Add(series1);
             this.stick_chart.Size = new System.Drawing.Size(638, 442);
             this.stick_chart.TabIndex = 26;
             this.stick_chart.Text = "chart1";
-            title10.Name = "계산 내역";
-            this.stick_chart.Titles.Add(title10);
+            title1.Name = "계산 내역";
+            this.stick_chart.Titles.Add(title1);
             this.stick_chart.Visible = false;
             // 
             // linkBox
             // 
-            this.linkBox.Location = new System.Drawing.Point(261, 803);
+            this.linkBox.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.linkBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(114)))), ((int)(((byte)(114)))));
+            this.linkBox.Location = new System.Drawing.Point(246, 802);
             this.linkBox.Name = "linkBox";
             this.linkBox.ReadOnly = true;
             this.linkBox.Size = new System.Drawing.Size(299, 28);
@@ -440,22 +538,25 @@ namespace Calculator
             // 
             // callBtn
             // 
+            this.callBtn.BackColor = System.Drawing.Color.White;
+            this.callBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(114)))), ((int)(((byte)(114)))));
             this.callBtn.Location = new System.Drawing.Point(566, 802);
             this.callBtn.Name = "callBtn";
             this.callBtn.Size = new System.Drawing.Size(109, 29);
             this.callBtn.TabIndex = 29;
             this.callBtn.Text = "불러오기";
-            this.callBtn.UseVisualStyleBackColor = true;
+            this.callBtn.UseVisualStyleBackColor = false;
             this.callBtn.Click += new System.EventHandler(this.callBtn_Click);
             // 
             // printGraph
             // 
-            this.printGraph.Image = global::Calculator.Properties.Resources.스크린샷_2024_07_11_133538;
+            this.printGraph.Image = global::Calculator.Properties.Resources.스크린샷_2024_07_12_103019;
             this.printGraph.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.printGraph.Location = new System.Drawing.Point(706, 142);
+            this.printGraph.Location = new System.Drawing.Point(875, 769);
             this.printGraph.Name = "printGraph";
-            this.printGraph.Size = new System.Drawing.Size(134, 136);
+            this.printGraph.Size = new System.Drawing.Size(149, 136);
             this.printGraph.TabIndex = 27;
+            this.printGraph.Text = "0.";
             this.printGraph.UseVisualStyleBackColor = true;
             this.printGraph.Click += new System.EventHandler(this.graph_Click);
             // 
@@ -463,13 +564,14 @@ namespace Calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(852, 956);
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ClientSize = new System.Drawing.Size(1130, 956);
             this.Controls.Add(this.callBtn);
             this.Controls.Add(this.linkBox);
-            this.Controls.Add(this.printGraph);
-            this.Controls.Add(this.stick_chart);
             this.Controls.Add(this.closeBtn);
             this.Controls.Add(this.historyBox);
+            this.Controls.Add(this.printGraph);
+            this.Controls.Add(this.stick_chart);
             this.Controls.Add(this.HCBtn);
             this.Controls.Add(this.dot);
             this.Controls.Add(this.formulaBox);

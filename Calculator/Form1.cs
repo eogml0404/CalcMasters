@@ -4,15 +4,15 @@ using System.Linq;
 using System.Windows.Forms;
 using System.IO;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using System.Text;
-using static System.Windows.Forms.LinkLabel;
 using System.Windows.Forms.DataVisualization.Charting;
+using System.Drawing;
 
 namespace Calculator
 {
     public partial class Calcul : Form
     {
         string filepath = "history.txt"; // 상대경로 설정
+
 
         //계산 내역을 List에 불러오는 함수
         private void LoadHistory(string filePath)
@@ -49,7 +49,10 @@ namespace Calculator
         public Calcul()
         {
             InitializeComponent();
-
+            this.Paint += new PaintEventHandler(Form1_Paint);
+            resultBox.BackColor = this.BackColor; // TextBox 배경색을 폼 배경색과 동일하게 설정
+            resultBox.BorderStyle = BorderStyle.None; // 기본 테두리를 제거
+            
             if (File.Exists(filepath))
             {
                 // 파일의 모든 라인을 읽고 하나의 문자열로 결합
@@ -58,7 +61,27 @@ namespace Calculator
 
             }
         }
-        
+
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+            using (Pen pen = new Pen(ColorTranslator.FromHtml("#F97272"), 2))
+            {
+                Rectangle rect = new Rectangle(resultBox.Location.X - 1, resultBox.Location.Y - 1, resultBox.Width + 1, resultBox.Height + 1);
+                e.Graphics.DrawRectangle(pen, rect);
+            }
+            using (Pen pen = new Pen(ColorTranslator.FromHtml("#F97272"), 2))
+            {
+                Rectangle rect = new Rectangle(inputBox.Location.X - 1, inputBox.Location.Y - 1, inputBox.Width + 1, inputBox.Height + 1);
+                e.Graphics.DrawRectangle(pen, rect);
+            }
+            using (Pen pen = new Pen(ColorTranslator.FromHtml("#F97272"), 2))
+            {
+                Rectangle rect = new Rectangle(formulaBox.Location.X - 1, formulaBox.Location.Y - 1, formulaBox.Width + 1, formulaBox.Height + 1);
+                e.Graphics.DrawRectangle(pen, rect);
+                
+            }
+
+        }
         List<double> numbers = new List<double>();
         List<string> operators = new List<string>();
         bool calculationCompleted = false;
