@@ -12,6 +12,7 @@ namespace Calculator
 {
     public partial class Calcul : Form
     {
+
         string filepath = "history.txt"; // 상대경로 설정
 
         //계산 내역을 List에 불러오는 함수
@@ -59,6 +60,7 @@ namespace Calculator
             }
         }
         
+
         List<double> numbers = new List<double>();
         List<string> operators = new List<string>();
         bool calculationCompleted = false;
@@ -66,13 +68,31 @@ namespace Calculator
         List<double> results = new List<double>();
         bool isGraphVisible = true;
 
-        int j = 0;
+        double rb_answer; 
+        int j;
 
+
+        public Calcul()
+        {
+            InitializeComponent();
+
+            resultBox.Text = "0";
+
+            rb_answer = double.Parse(resultBox.Text);
+            j = 0;
+
+
+            decimalRadioButton.Checked = true;
+        }
+
+       
 
         private void minus_Click(object sender, EventArgs e)
         {
             AddNumberAndOperator("-");
         }
+
+
 
         private void plus_Click(object sender, EventArgs e)
         {
@@ -173,7 +193,6 @@ namespace Calculator
                 File.AppendAllText(filepath, newText + Environment.NewLine);
             }
 
-
         }
 
         // 계산하는 함수 operators 리스트 돌면서 계산 
@@ -266,7 +285,13 @@ namespace Calculator
             {
                 j--;
             }
-           
+
+            formulaBox.Text += " = " + finalResult.ToString("N2");
+
+            rb_answer = finalResult;
+
+            //내역에 저장
+            history[j] = formulaBox.Text;
 
             inputBox.Text = "";
             numbers.Clear();
@@ -295,6 +320,8 @@ namespace Calculator
             formulaBox.Text = "";
             numbers.Clear();
             operators.Clear();
+            rb_answer = 0;
+            decimalRadioButton.Checked = true;
         }
 
         private void erase_Click(object sender, EventArgs e)
@@ -313,9 +340,9 @@ namespace Calculator
             string message = "";
 
             message = string.Join(Environment.NewLine, history);
-            
 
-            MessageBox.Show(message + "\r\n" , "계산 내역 (최대 5개)");
+
+            MessageBox.Show(message + "\r\n", "계산 내역 (최대 5개)");
 
         }
         private void button1_Click(object sender, EventArgs e)
@@ -383,11 +410,11 @@ namespace Calculator
                 string[] inputParts = inputBox.Text.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
                 string[] formulaParts = formulaBox.Text.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
-               
+
                 //마지막 부분이 숫자면 실행
                 if (double.TryParse(inputParts.Last(), out double lastNumber) && double.TryParse(formulaParts.Last(), out double lastFormulaNumber))
                 {
-                   
+
                     lastNumber = -lastNumber;
                     lastFormulaNumber = -lastFormulaNumber;
 
@@ -415,18 +442,57 @@ namespace Calculator
             {
                 return;
             }
-            else if(inputBox.Text == "")
+            else if (inputBox.Text == "")
             {
                 inputBox.Text += 0.ToString() + ".";
-                formulaBox.Text +=0.ToString() + ".";
+                formulaBox.Text += 0.ToString() + ".";
             }
-            else 
+            else
             {
                 inputBox.Text += ".";
                 formulaBox.Text += ".";
-            } 
+            }
+        }
+        //진수변환(6번)
+        private void binaryRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+
+
+            resultBox.Text = "";
+            if (rb_answer % 1 == 0)
+            {
+                resultBox.Text += Convert.ToString((int)rb_answer, 2);
+            }
+            else
+            {
+                resultBox.Text += "정수만 가능합니다.";
+            }
+        }
+        
+
+        private void decimalRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            resultBox.Text = "";
+            resultBox.Text += rb_answer.ToString();
         }
 
+        private void hexRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            resultBox.Text = "";
+            if (rb_answer % 1 == 0)
+            {
+                resultBox.Text += Convert.ToString((int)rb_answer, 16).ToUpper();
+            }
+            else
+            {
+                resultBox.Text += "정수만 가능합니다.";
+            }
+        }
+        //오늘과 입력일의 날짜차이계산
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            dateDifferenceBox.Text = "";
+=======
         //History Clear 버튼
         private void HCBtn_Click(object sender, EventArgs e)
         {
@@ -511,4 +577,38 @@ namespace Calculator
         }
     }
 
+
+            DateTime currentDate = DateTime.Today;
+            DateTime selectedDate = dateTimePicker1.Value.Date;
+            TimeSpan dateDifference = selectedDate - currentDate;
+            int dayDifference = (int)dateDifference.Days;
+            int dayDifference1 = -(int)dateDifference.Days;
+
+            if (dayDifference > 0)
+            {
+                dateDifferenceBox.Text += $"{dayDifference}일 후 입니다.";
+            }
+            else if (dayDifference < 0)
+            {
+                dateDifferenceBox.Text += $"{dayDifference1}일 전 입니다.";
+            }
+            else
+            {
+                dateDifferenceBox.Text += "오늘입니다.";
+            }
+
+        }
+
+        /*private string ConvertToBinary(double value)
+        {
+            long num = BitConverter.DoubleToInt64Bits(value);
+            return Convert.ToString(num, 2);
+        }
+
+        private string ConvertToHex(double value)
+        {
+            long num = BitConverter.DoubleToInt64Bits(value);
+            return Convert.ToString(num, 16).ToUpper();
+        }*/
+    }
 }
