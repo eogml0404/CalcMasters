@@ -394,6 +394,7 @@ namespace Calculator
             DateTime selectedDate = dateTimePicker1.Value.Date;
             TimeSpan dateDifference = selectedDate - currentDate;
             int dayDifference = (int)dateDifference.Days;
+            int dayDifference1 = -(int)dateDifference.Days;
 
             if (dayDifference > 0)
             {
@@ -401,7 +402,7 @@ namespace Calculator
             }
             else if (dayDifference < 0)
             {
-                dateDifferenceBox.Text += $"{dayDifference}일 전 입니다.";
+                dateDifferenceBox.Text += $"{dayDifference1}일 전 입니다.";
             }
             else
             {
